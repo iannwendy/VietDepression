@@ -1,0 +1,76 @@
+{
+  "protocol_version": "round6_v1",
+  "timestamp": "2026-08-09T09:18:05.049699",
+  "round6_review": {
+    "total_reviewed": 6813,
+    "valid_labels": 5702,
+    "excluded": 1111,
+    "distribution": {
+      "normal": 4458,
+      "depression": 1244
+    }
+  },
+  "datasets": {
+    "final_train": {
+      "rows": 12555,
+      "labels": {
+        "0": 10583,
+        "1": 1972
+      },
+      "sources": {
+        "human_gold_round6": 5702,
+        "weak_high_conf": 3421,
+        "human_gold_pre_round5": 2072,
+        "human_gold_round5": 1360
+      }
+    },
+    "final_val": {
+      "rows": 241,
+      "labels": {
+        "0": 217,
+        "1": 24
+      }
+    },
+    "final_test": {
+      "rows": 242,
+      "labels": {
+        "0": 217,
+        "1": 25
+      }
+    },
+    "cross_domain": {
+      "rows": 3084,
+      "labels": {
+        "0": 1542,
+        "1": 1542
+      }
+    }
+  },
+  "integrity": {
+    "null_or_blank_text": {
+      "train": 0,
+      "val": 0,
+      "test": 0,
+      "cross_domain": 0
+    },
+    "duplicate_text_within_split": {
+      "train": 0,
+      "val": 0,
+      "test": 0,
+      "cross_domain": 0
+    },
+    "overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0,
+      "train_cross_domain": 0
+    },
+    "invalid_labels": {
+      "train": 0,
+      "val": 0,
+      "test": 0,
+      "cross_domain": 0
+    }
+  },
+  "integrity_pass": true
+}

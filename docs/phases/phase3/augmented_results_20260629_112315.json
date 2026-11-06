@@ -1,0 +1,47 @@
+{
+  "timestamp": "20260629_112315",
+  "epochs": 5,
+  "batch_size": 16,
+  "train_samples": 2489,
+  "test": {
+    "accuracy": 0.9662921348314607,
+    "precision_macro": 0.9660384609226138,
+    "recall_macro": 0.9580297427020221,
+    "f1_macro": 0.9618619857795836,
+    "f1_depression": 0.9748603351955307,
+    "confusion_matrix": [
+      [
+        167,
+        12
+      ],
+      [
+        6,
+        349
+      ]
+    ]
+  },
+  "cross_domain": {
+    "accuracy": 0.5275616083009079,
+    "precision_macro": 0.6887860482400422,
+    "recall_macro": 0.5275616083009079,
+    "f1_macro": 0.3993142908476798,
+    "f1_depression": 0.12176009644364075,
+    "confusion_matrix": [
+      [
+        1526,
+        16
+      ],
+      [
+        1441,
+        101
+      ]
+    ]
+  },
+  "comparison": {
+    "model": "PhoBERT (augmented)",
+    "in_domain_f1": 0.9618619857795836,
+    "cross_domain_f1": 0.3993142908476798,
+    "previous_in_domain_f1": 0.8681,
+    "previous_cross_domain_f1": 0.3727
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "datasets": [
+    {
+      "hf_id": "duwuonline/UIT-VSMEC",
+      "status": "ok",
+      "rows": 6919,
+      "label_scheme": "emotion_7class",
+      "relevance_tier": 1,
+      "native_vi": true,
+      "note": "UIT-VSMEC: cảm xúc 7 lớp; Sadness/Fear/Disgust sát đề tài trầm cảm.",
+      "label_distribution": {
+        "Enjoyment": 1965,
+        "Disgust": 1335,
+        "Other": 1290,
+        "Sadness": 1149,
+        "Anger": 479,
+        "Fear": 393,
+        "Surprise": 308
+      },
+      "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/raw_per_dataset/duwuonline__UIT-VSMEC.csv"
+    },
+    {
+      "hf_id": "thainq107/ntc-scv",
+      "status": "ok",
+      "rows": 49953,
+      "label_scheme": "sentiment_binary",
+      "relevance_tier": 2,
+      "native_vi": true,
+      "note": "NTC-SCV: review Foody người Việt viết; 0=negative,1=positive.",
+      "label_distribution": {
+        "negative": 24979,
+        "positive": 24974
+      },
+      "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/raw_per_dataset/thainq107__ntc-scv.csv"
+    },
+    {
+      "hf_id": "tridm/UIT-VSFC",
+      "status": "ok",
+      "rows": 16170,
+      "label_scheme": "sentiment_3class",
+      "relevance_tier": 2,
+      "native_vi": true,
+      "note": "UIT-VSFC: phản hồi sinh viên; 0=negative,1=neutral,2=positive.",
+      "label_distribution": {
+        "positive": 8038,
+        "negative": 7437,
+        "neutral": 695
+      },
+      "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/raw_per_dataset/tridm__UIT-VSFC.csv"
+    },
+    {
+      "hf_id": "anotherpolarbear/vietnamese-sentiment-analysis",
+      "status": "ok",
+      "rows": 10003,
+      "label_scheme": "sentiment_5star",
+      "relevance_tier": 2,
+      "native_vi": true,
+      "note": "Review sản phẩm tiếng Việt; nhãn 1-5 sao.",
+      "label_distribution": {
+        "5": 4666,
+        "4": 1662,
+        "1": 1658,
+        "3": 1270,
+        "2": 747
+      },
+      "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/raw_per_dataset/anotherpolarbear__vietnamese-sentiment-analysis.csv"
+    },
+    {
+      "hf_id": "sepidmnorozy/Vietnamese_sentiment",
+      "status": "ok",
+      "rows": 3353,
+      "label_scheme": "sentiment_binary",
+      "relevance_tier": 2,
+      "native_vi": true,
+      "note": "Sentiment nhị phân tiếng Việt; 0=negative,1=positive.",
+      "label_distribution": {
+        "negative": 1689,
+        "positive": 1664
+      },
+      "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/raw_per_dataset/sepidmnorozy__Vietnamese_sentiment.csv"
+    },
+    {
+      "hf_id": "minhtoan/vietnamese-comment-sentiment",
+      "status": "ok",
+      "rows": 7311,
+      "label_scheme": "sentiment_3class_vi",
+      "relevance_tier": 3,
+      "native_vi": true,
+      "note": "Sentiment văn bản tin tức/tài chính tiếng Việt (Tích cực/Trung lập/Tiêu cực).",
+      "label_distribution": {
+        "Trung lập": 2548,
+        "neutral": 2402,
+        "Tích cực": 1751,
+        "positive": 468,
+        "Tiêu cực": 112,
+        "negative": 30
+      },
+      "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/raw_per_dataset/minhtoan__vietnamese-comment-sentiment.csv"
+    },
+    {
+      "hf_id": "zerostratos/vietnamese_toxic_core",
+      "status": "ok",
+      "rows": 46290,
+      "label_scheme": "toxic_binary",
+      "relevance_tier": 3,
+      "native_vi": true,
+      "note": "Bình luận độc hại tiếng Việt; 0=clean,1=toxic.",
+      "label_distribution": {
+        "clean": 33853,
+        "toxic": 12437
+      },
+      "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/raw_per_dataset/zerostratos__vietnamese_toxic_core.csv"
+    },
+    {
+      "hf_id": "thanh29nt/vietnamese-toxic-comment",
+      "status": "ok",
+      "rows": 52000,
+      "label_scheme": "toxic_binary_translated",
+      "relevance_tier": 3,
+      "native_vi": false,
+      "note": "Jigsaw toxic DỊCH MÁY sang tiếng Việt (đã tách từ); 0=clean,1=toxic. Chất lượng thấp.",
+      "label_distribution": {
+        "0": 46935,
+        "1": 5065
+      },
+      "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/raw_per_dataset/thanh29nt__vietnamese-toxic-comment.csv"
+    }
+  ],
+  "total_rows": 191991,
+  "by_tier": {
+    "1": 6919,
+    "2": 79479,
+    "3": 105593
+  },
+  "by_source_native": {
+    "true": 139991,
+    "false": 52000
+  },
+  "cross_dataset_duplicates_removed": 8,
+  "by_source_dataset": {
+    "thanh29nt/vietnamese-toxic-comment": 52000,
+    "thainq107/ntc-scv": 49953,
+    "zerostratos/vietnamese_toxic_core": 46282,
+    "tridm/UIT-VSFC": 16170,
+    "anotherpolarbear/vietnamese-sentiment-analysis": 10003,
+    "minhtoan/vietnamese-comment-sentiment": 7311,
+    "duwuonline/UIT-VSMEC": 6919,
+    "sepidmnorozy/Vietnamese_sentiment": 3353
+  },
+  "combined_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/external_vietnamese_combined.csv"
+}

@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+**/*.pyc
+.DS_Store
+logs/*.log
+data/*.csv
+data/*.txt
+data/*.json
+data/gold_review.csv
+data/review_eval_errors.csv
+data/baseline_gold_errors.csv
+models/*.joblib
+models/*.json
+models/phobert_first/

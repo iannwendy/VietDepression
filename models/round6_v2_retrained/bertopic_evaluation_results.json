@@ -1,0 +1,2374 @@
+{
+  "timestamp": "2026-10-27T15:38:22.456704",
+  "round": "round6_v2_inductive",
+  "bertopic_model_metadata": {
+    "training_protocol": "inductive_train_only_no_test_or_vsmec_leakage",
+    "train_documents": 6392,
+    "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+    "embedding_dim": 384,
+    "min_cluster_size": 30,
+    "min_samples": 5,
+    "n_proper_topics": 36,
+    "n_total_clusters_including_outlier": 37,
+    "n_outlier_documents_in_train": 2141,
+    "outlier_percentage_in_train": 33.49,
+    "outlier_encoding_protocol": "Explicit (K+1)-slot one-hot indicator (slot 0 = outlier topic -1, slots 1..36 = proper topics 0..35) + 36-dim soft HDBSCAN probability distribution + 1 max-confidence scalar (total topic feature dim = 74; classic one-hot+prob dim = 38).",
+    "topic_distribution": [
+      {
+        "topic_id": -1,
+        "name": "-1_s_em_lc_thn",
+        "document_count": 2141,
+        "percentage": 33.49,
+        "top_words": [
+          {
+            "word": "s",
+            "score": 0.0143
+          },
+          {
+            "word": "em",
+            "score": 0.0131
+          },
+          {
+            "word": "lc",
+            "score": 0.0119
+          },
+          {
+            "word": "thn",
+            "score": 0.01
+          },
+          {
+            "word": "ln",
+            "score": 0.01
+          },
+          {
+            "word": "thy",
+            "score": 0.0098
+          },
+          {
+            "word": "ngh",
+            "score": 0.0097
+          },
+          {
+            "word": "ra",
+            "score": 0.0094
+          },
+          {
+            "word": "rt",
+            "score": 0.0093
+          },
+          {
+            "word": "e",
+            "score": 0.0092
+          }
+        ]
+      },
+      {
+        "topic_id": 0,
+        "name": "0_trm cm_trm_b trm_thuc",
+        "document_count": 558,
+        "percentage": 8.73,
+        "top_words": [
+          {
+            "word": "trm cm",
+            "score": 0.0417
+          },
+          {
+            "word": "trm",
+            "score": 0.0414
+          },
+          {
+            "word": "b trm",
+            "score": 0.0226
+          },
+          {
+            "word": "thuc",
+            "score": 0.0192
+          },
+          {
+            "word": "lo",
+            "score": 0.0188
+          },
+          {
+            "word": "s",
+            "score": 0.0187
+          },
+          {
+            "word": "lon",
+            "score": 0.0162
+          },
+          {
+            "word": "bc s",
+            "score": 0.0161
+          },
+          {
+            "word": "ri lon",
+            "score": 0.0146
+          },
+          {
+            "word": "ung",
+            "score": 0.0143
+          }
+        ]
+      },
+      {
+        "topic_id": 1,
+        "name": "1_mt ng_ng c_gic_b mt",
+        "document_count": 404,
+        "percentage": 6.32,
+        "top_words": [
+          {
+            "word": "mt ng",
+            "score": 0.0442
+          },
+          {
+            "word": "ng c",
+            "score": 0.0271
+          },
+          {
+            "word": "gic",
+            "score": 0.0208
+          },
+          {
+            "word": "b mt",
+            "score": 0.0206
+          },
+          {
+            "word": "gic ng",
+            "score": 0.0196
+          },
+          {
+            "word": "ung",
+            "score": 0.0185
+          },
+          {
+            "word": "bc s",
+            "score": 0.0173
+          },
+          {
+            "word": "thuc",
+            "score": 0.0165
+          },
+          {
+            "word": "bs",
+            "score": 0.0148
+          },
+          {
+            "word": "s",
+            "score": 0.0142
+          }
+        ]
+      },
+      {
+        "topic_id": 2,
+        "name": "2_b m_ba_lc_ln",
+        "document_count": 347,
+        "percentage": 5.43,
+        "top_words": [
+          {
+            "word": "b m",
+            "score": 0.0186
+          },
+          {
+            "word": "ba",
+            "score": 0.0144
+          },
+          {
+            "word": "lc",
+            "score": 0.0141
+          },
+          {
+            "word": "ln",
+            "score": 0.0136
+          },
+          {
+            "word": "s",
+            "score": 0.0126
+          },
+          {
+            "word": "ba m",
+            "score": 0.0124
+          },
+          {
+            "word": "cha",
+            "score": 0.0121
+          },
+          {
+            "word": "m mnh",
+            "score": 0.0119
+          },
+          {
+            "word": "phi",
+            "score": 0.0103
+          },
+          {
+            "word": "gia",
+            "score": 0.01
+          }
+        ]
+      },
+      {
+        "topic_id": 3,
+        "name": "3_video_em_video ny_cm n",
+        "document_count": 287,
+        "percentage": 4.49,
+        "top_words": [
+          {
+            "word": "video",
+            "score": 0.0421
+          },
+          {
+            "word": "em",
+            "score": 0.0264
+          },
+          {
+            "word": "video ny",
+            "score": 0.0213
+          },
+          {
+            "word": "cm n",
+            "score": 0.0179
+          },
+          {
+            "word": "xem",
+            "score": 0.0173
+          },
+          {
+            "word": "s",
+            "score": 0.0166
+          },
+          {
+            "word": "rt",
+            "score": 0.0163
+          },
+          {
+            "word": "thn",
+            "score": 0.0138
+          },
+          {
+            "word": "bn thn",
+            "score": 0.0138
+          },
+          {
+            "word": "video ca",
+            "score": 0.0132
+          }
+        ]
+      },
+      {
+        "topic_id": 4,
+        "name": "4_co_cam_nguoi_toi",
+        "document_count": 208,
+        "percentage": 3.25,
+        "top_words": [
+          {
+            "word": "co",
+            "score": 0.0909
+          },
+          {
+            "word": "cam",
+            "score": 0.0623
+          },
+          {
+            "word": "nguoi",
+            "score": 0.0614
+          },
+          {
+            "word": "toi",
+            "score": 0.0561
+          },
+          {
+            "word": "cua",
+            "score": 0.053
+          },
+          {
+            "word": "minh",
+            "score": 0.0515
+          },
+          {
+            "word": "rat",
+            "score": 0.0511
+          },
+          {
+            "word": "la",
+            "score": 0.0485
+          },
+          {
+            "word": "lam",
+            "score": 0.0477
+          },
+          {
+            "word": "noi",
+            "score": 0.0474
+          }
+        ]
+      },
+      {
+        "topic_id": 5,
+        "name": "5_khc_bun_nc mt_nc",
+        "document_count": 200,
+        "percentage": 3.13,
+        "top_words": [
+          {
+            "word": "khc",
+            "score": 0.0499
+          },
+          {
+            "word": "bun",
+            "score": 0.0233
+          },
+          {
+            "word": "nc mt",
+            "score": 0.0219
+          },
+          {
+            "word": "nc",
+            "score": 0.0213
+          },
+          {
+            "word": "au",
+            "score": 0.0192
+          },
+          {
+            "word": "em",
+            "score": 0.0154
+          },
+          {
+            "word": "bi ny",
+            "score": 0.0143
+          },
+          {
+            "word": "s",
+            "score": 0.0132
+          },
+          {
+            "word": "khc rt",
+            "score": 0.0128
+          },
+          {
+            "word": "tim",
+            "score": 0.0127
+          }
+        ]
+      },
+      {
+        "topic_id": 6,
+        "name": "6_hc_em_s_lp",
+        "document_count": 188,
+        "percentage": 2.94,
+        "top_words": [
+          {
+            "word": "hc",
+            "score": 0.0315
+          },
+          {
+            "word": "em",
+            "score": 0.0259
+          },
+          {
+            "word": "s",
+            "score": 0.0169
+          },
+          {
+            "word": "lp",
+            "score": 0.0132
+          },
+          {
+            "word": "rt",
+            "score": 0.013
+          },
+          {
+            "word": "im",
+            "score": 0.0129
+          },
+          {
+            "word": "e",
+            "score": 0.0121
+          },
+          {
+            "word": "thn",
+            "score": 0.012
+          },
+          {
+            "word": "lc",
+            "score": 0.0116
+          },
+          {
+            "word": "bn thn",
+            "score": 0.0113
+          }
+        ]
+      },
+      {
+        "topic_id": 7,
+        "name": "7_c n_s_thy_ta",
+        "document_count": 171,
+        "percentage": 2.68,
+        "top_words": [
+          {
+            "word": "c n",
+            "score": 0.0587
+          },
+          {
+            "word": "s",
+            "score": 0.0202
+          },
+          {
+            "word": "thy",
+            "score": 0.015
+          },
+          {
+            "word": "ta",
+            "score": 0.0133
+          },
+          {
+            "word": "thn",
+            "score": 0.0123
+          },
+          {
+            "word": "1 mnh",
+            "score": 0.0117
+          },
+          {
+            "word": "1",
+            "score": 0.0116
+          },
+          {
+            "word": "rt",
+            "score": 0.0112
+          },
+          {
+            "word": "lng",
+            "score": 0.0111
+          },
+          {
+            "word": "yu",
+            "score": 0.011
+          }
+        ]
+      },
+      {
+        "topic_id": 8,
+        "name": "8_bi_bi ht_nhc_ht ny",
+        "document_count": 157,
+        "percentage": 2.46,
+        "top_words": [
+          {
+            "word": "bi",
+            "score": 0.0259
+          },
+          {
+            "word": "bi ht",
+            "score": 0.0247
+          },
+          {
+            "word": "nhc",
+            "score": 0.0205
+          },
+          {
+            "word": "ht ny",
+            "score": 0.0157
+          },
+          {
+            "word": "em",
+            "score": 0.0153
+          },
+          {
+            "word": "bun",
+            "score": 0.0132
+          },
+          {
+            "word": "lng",
+            "score": 0.0129
+          },
+          {
+            "word": "ngy",
+            "score": 0.0124
+          },
+          {
+            "word": "s",
+            "score": 0.0118
+          },
+          {
+            "word": "tri",
+            "score": 0.0117
+          }
+        ]
+      },
+      {
+        "topic_id": 9,
+        "name": "9_e_tui_p_lc",
+        "document_count": 138,
+        "percentage": 2.16,
+        "top_words": [
+          {
+            "word": "e",
+            "score": 0.0408
+          },
+          {
+            "word": "tui",
+            "score": 0.0362
+          },
+          {
+            "word": "p",
+            "score": 0.0206
+          },
+          {
+            "word": "lc",
+            "score": 0.0204
+          },
+          {
+            "word": "ah",
+            "score": 0.0186
+          },
+          {
+            "word": "a",
+            "score": 0.0169
+          },
+          {
+            "word": "p lc",
+            "score": 0.0169
+          },
+          {
+            "word": "lun",
+            "score": 0.0155
+          },
+          {
+            "word": "bun",
+            "score": 0.013
+          },
+          {
+            "word": "khc",
+            "score": 0.0121
+          }
+        ]
+      },
+      {
+        "topic_id": 10,
+        "name": "10_thy_pht_n thy_cm n",
+        "document_count": 124,
+        "percentage": 1.94,
+        "top_words": [
+          {
+            "word": "thy",
+            "score": 0.0374
+          },
+          {
+            "word": "pht",
+            "score": 0.0268
+          },
+          {
+            "word": "n thy",
+            "score": 0.0264
+          },
+          {
+            "word": "cm n",
+            "score": 0.0187
+          },
+          {
+            "word": "cha",
+            "score": 0.0182
+          },
+          {
+            "word": "trm",
+            "score": 0.0176
+          },
+          {
+            "word": "trm cm",
+            "score": 0.0171
+          },
+          {
+            "word": "ca thy",
+            "score": 0.0155
+          },
+          {
+            "word": "rt",
+            "score": 0.0142
+          },
+          {
+            "word": "bit",
+            "score": 0.0137
+          }
+        ]
+      },
+      {
+        "topic_id": 11,
+        "name": "11_mt mi_ngh_em_suy",
+        "document_count": 108,
+        "percentage": 1.69,
+        "top_words": [
+          {
+            "word": "mt mi",
+            "score": 0.0313
+          },
+          {
+            "word": "ngh",
+            "score": 0.0219
+          },
+          {
+            "word": "em",
+            "score": 0.0202
+          },
+          {
+            "word": "suy",
+            "score": 0.0181
+          },
+          {
+            "word": "lc",
+            "score": 0.0181
+          },
+          {
+            "word": "mt qu",
+            "score": 0.018
+          },
+          {
+            "word": "lm ri",
+            "score": 0.0167
+          },
+          {
+            "word": "p lc",
+            "score": 0.0154
+          },
+          {
+            "word": "suy ngh",
+            "score": 0.0149
+          },
+          {
+            "word": "s",
+            "score": 0.0147
+          }
+        ]
+      },
+      {
+        "topic_id": 12,
+        "name": "12_co_minh_lam_mat",
+        "document_count": 102,
+        "percentage": 1.6,
+        "top_words": [
+          {
+            "word": "co",
+            "score": 0.0555
+          },
+          {
+            "word": "minh",
+            "score": 0.0477
+          },
+          {
+            "word": "lam",
+            "score": 0.0367
+          },
+          {
+            "word": "mat",
+            "score": 0.0348
+          },
+          {
+            "word": "toi",
+            "score": 0.0339
+          },
+          {
+            "word": "a",
+            "score": 0.0333
+          },
+          {
+            "word": "nguoi",
+            "score": 0.0332
+          },
+          {
+            "word": "cam",
+            "score": 0.0319
+          },
+          {
+            "word": "cung",
+            "score": 0.0298
+          },
+          {
+            "word": "la",
+            "score": 0.0297
+          }
+        ]
+      },
+      {
+        "topic_id": 13,
+        "name": "13_anh_yu_em_chia tay",
+        "document_count": 93,
+        "percentage": 1.45,
+        "top_words": [
+          {
+            "word": "anh",
+            "score": 0.0445
+          },
+          {
+            "word": "yu",
+            "score": 0.0287
+          },
+          {
+            "word": "em",
+            "score": 0.0277
+          },
+          {
+            "word": "chia tay",
+            "score": 0.0206
+          },
+          {
+            "word": "nm",
+            "score": 0.0186
+          },
+          {
+            "word": "tay",
+            "score": 0.0183
+          },
+          {
+            "word": "hn",
+            "score": 0.0162
+          },
+          {
+            "word": "chia",
+            "score": 0.0155
+          },
+          {
+            "word": "nhau",
+            "score": 0.0128
+          },
+          {
+            "word": "anh y",
+            "score": 0.0123
+          }
+        ]
+      },
+      {
+        "topic_id": 14,
+        "name": "14_mik_mk_cx_lc",
+        "document_count": 92,
+        "percentage": 1.44,
+        "top_words": [
+          {
+            "word": "mik",
+            "score": 0.1008
+          },
+          {
+            "word": "mk",
+            "score": 0.0746
+          },
+          {
+            "word": "cx",
+            "score": 0.0235
+          },
+          {
+            "word": "lc",
+            "score": 0.0174
+          },
+          {
+            "word": "s",
+            "score": 0.0162
+          },
+          {
+            "word": "mik c",
+            "score": 0.0146
+          },
+          {
+            "word": "thy",
+            "score": 0.0137
+          },
+          {
+            "word": "mik ko",
+            "score": 0.0134
+          },
+          {
+            "word": "vs",
+            "score": 0.0123
+          },
+          {
+            "word": "ngh",
+            "score": 0.0117
+          }
+        ]
+      },
+      {
+        "topic_id": 15,
+        "name": "15_bn thn_thn_em_s",
+        "document_count": 86,
+        "percentage": 1.35,
+        "top_words": [
+          {
+            "word": "bn thn",
+            "score": 0.0232
+          },
+          {
+            "word": "thn",
+            "score": 0.0217
+          },
+          {
+            "word": "em",
+            "score": 0.0182
+          },
+          {
+            "word": "s",
+            "score": 0.0169
+          },
+          {
+            "word": "thy",
+            "score": 0.0126
+          },
+          {
+            "word": "nhn",
+            "score": 0.0121
+          },
+          {
+            "word": "thnh",
+            "score": 0.012
+          },
+          {
+            "word": "lc",
+            "score": 0.0117
+          },
+          {
+            "word": "lun",
+            "score": 0.0113
+          },
+          {
+            "word": "nn",
+            "score": 0.0113
+          }
+        ]
+      },
+      {
+        "topic_id": 16,
+        "name": "16_yu_ta_au_chng",
+        "document_count": 84,
+        "percentage": 1.31,
+        "top_words": [
+          {
+            "word": "yu",
+            "score": 0.0388
+          },
+          {
+            "word": "ta",
+            "score": 0.0253
+          },
+          {
+            "word": "au",
+            "score": 0.0236
+          },
+          {
+            "word": "chng",
+            "score": 0.017
+          },
+          {
+            "word": "anh chng",
+            "score": 0.0157
+          },
+          {
+            "word": "bun",
+            "score": 0.0156
+          },
+          {
+            "word": "tnh yu",
+            "score": 0.0155
+          },
+          {
+            "word": "l do",
+            "score": 0.0142
+          },
+          {
+            "word": "ni au",
+            "score": 0.0134
+          },
+          {
+            "word": "chng th",
+            "score": 0.0129
+          }
+        ]
+      },
+      {
+        "topic_id": 17,
+        "name": "17_s_cuc_thy_thn",
+        "document_count": 76,
+        "percentage": 1.19,
+        "top_words": [
+          {
+            "word": "s",
+            "score": 0.0165
+          },
+          {
+            "word": "cuc",
+            "score": 0.0126
+          },
+          {
+            "word": "thy",
+            "score": 0.0125
+          },
+          {
+            "word": "thn",
+            "score": 0.0125
+          },
+          {
+            "word": "ra",
+            "score": 0.0122
+          },
+          {
+            "word": "tr",
+            "score": 0.0114
+          },
+          {
+            "word": "khc",
+            "score": 0.0114
+          },
+          {
+            "word": "bn thn",
+            "score": 0.0109
+          },
+          {
+            "word": "lun",
+            "score": 0.0107
+          },
+          {
+            "word": "chnh",
+            "score": 0.0106
+          }
+        ]
+      },
+      {
+        "topic_id": 18,
+        "name": "18_vic_cng vic_em_ngh",
+        "document_count": 68,
+        "percentage": 1.06,
+        "top_words": [
+          {
+            "word": "vic",
+            "score": 0.0515
+          },
+          {
+            "word": "cng vic",
+            "score": 0.0428
+          },
+          {
+            "word": "em",
+            "score": 0.0207
+          },
+          {
+            "word": "ngh",
+            "score": 0.0143
+          },
+          {
+            "word": "s",
+            "score": 0.014
+          },
+          {
+            "word": "lm vic",
+            "score": 0.0125
+          },
+          {
+            "word": "ngy",
+            "score": 0.0121
+          },
+          {
+            "word": "nm",
+            "score": 0.0119
+          },
+          {
+            "word": "lc",
+            "score": 0.0117
+          },
+          {
+            "word": "1",
+            "score": 0.0117
+          }
+        ]
+      },
+      {
+        "topic_id": 19,
+        "name": "19_hc_p lc_p_lc",
+        "document_count": 67,
+        "percentage": 1.05,
+        "top_words": [
+          {
+            "word": "hc",
+            "score": 0.0598
+          },
+          {
+            "word": "p lc",
+            "score": 0.054
+          },
+          {
+            "word": "p",
+            "score": 0.0461
+          },
+          {
+            "word": "lc",
+            "score": 0.0419
+          },
+          {
+            "word": "lc hc",
+            "score": 0.0265
+          },
+          {
+            "word": "hc tp",
+            "score": 0.0256
+          },
+          {
+            "word": "em",
+            "score": 0.0238
+          },
+          {
+            "word": "tp",
+            "score": 0.0233
+          },
+          {
+            "word": "i hc",
+            "score": 0.018
+          },
+          {
+            "word": "cx",
+            "score": 0.0165
+          }
+        ]
+      },
+      {
+        "topic_id": 20,
+        "name": "20_podcast_podcast ny_em_cm n",
+        "document_count": 66,
+        "percentage": 1.03,
+        "top_words": [
+          {
+            "word": "podcast",
+            "score": 0.0551
+          },
+          {
+            "word": "podcast ny",
+            "score": 0.0339
+          },
+          {
+            "word": "em",
+            "score": 0.0284
+          },
+          {
+            "word": "cm n",
+            "score": 0.019
+          },
+          {
+            "word": "thn",
+            "score": 0.0186
+          },
+          {
+            "word": "bn thn",
+            "score": 0.0185
+          },
+          {
+            "word": "s",
+            "score": 0.0184
+          },
+          {
+            "word": "rt",
+            "score": 0.0174
+          },
+          {
+            "word": "nghe podcast",
+            "score": 0.0144
+          },
+          {
+            "word": "lc",
+            "score": 0.0143
+          }
+        ]
+      },
+      {
+        "topic_id": 21,
+        "name": "21_cm n_tuyt vi_tuyt_rt hay",
+        "document_count": 60,
+        "percentage": 0.94,
+        "top_words": [
+          {
+            "word": "cm n",
+            "score": 0.138
+          },
+          {
+            "word": "tuyt vi",
+            "score": 0.0532
+          },
+          {
+            "word": "tuyt",
+            "score": 0.0417
+          },
+          {
+            "word": "rt hay",
+            "score": 0.0361
+          },
+          {
+            "word": "rt",
+            "score": 0.0311
+          },
+          {
+            "word": "knh",
+            "score": 0.0283
+          },
+          {
+            "word": "vi cm",
+            "score": 0.026
+          },
+          {
+            "word": "n ch",
+            "score": 0.0247
+          },
+          {
+            "word": "chia s",
+            "score": 0.024
+          },
+          {
+            "word": "em",
+            "score": 0.0234
+          }
+        ]
+      },
+      {
+        "topic_id": 22,
+        "name": "22_em_by h_ngh_bi",
+        "document_count": 57,
+        "percentage": 0.89,
+        "top_words": [
+          {
+            "word": "em",
+            "score": 0.0241
+          },
+          {
+            "word": "by h",
+            "score": 0.0201
+          },
+          {
+            "word": "ngh",
+            "score": 0.0164
+          },
+          {
+            "word": "bi",
+            "score": 0.016
+          },
+          {
+            "word": "ct",
+            "score": 0.0155
+          },
+          {
+            "word": "ti b",
+            "score": 0.0143
+          },
+          {
+            "word": "nay",
+            "score": 0.0138
+          },
+          {
+            "word": "a",
+            "score": 0.0137
+          },
+          {
+            "word": "nn",
+            "score": 0.0134
+          },
+          {
+            "word": "nay ti",
+            "score": 0.013
+          }
+        ]
+      },
+      {
+        "topic_id": 23,
+        "name": "23_ban_qua_noi_nay",
+        "document_count": 57,
+        "percentage": 0.89,
+        "top_words": [
+          {
+            "word": "ban",
+            "score": 0.0524
+          },
+          {
+            "word": "qua",
+            "score": 0.0473
+          },
+          {
+            "word": "noi",
+            "score": 0.0454
+          },
+          {
+            "word": "nay",
+            "score": 0.0404
+          },
+          {
+            "word": "anh",
+            "score": 0.04
+          },
+          {
+            "word": "minh",
+            "score": 0.0372
+          },
+          {
+            "word": "co",
+            "score": 0.0355
+          },
+          {
+            "word": "h anh",
+            "score": 0.0351
+          },
+          {
+            "word": "hmm",
+            "score": 0.0351
+          },
+          {
+            "word": "dc",
+            "score": 0.0351
+          }
+        ]
+      },
+      {
+        "topic_id": 24,
+        "name": "24_cn nghe_cn ai_ai cn_ai nghe",
+        "document_count": 50,
+        "percentage": 0.78,
+        "top_words": [
+          {
+            "word": "cn nghe",
+            "score": 0.2741
+          },
+          {
+            "word": "cn ai",
+            "score": 0.2275
+          },
+          {
+            "word": "ai cn",
+            "score": 0.2033
+          },
+          {
+            "word": "ai nghe",
+            "score": 0.1897
+          },
+          {
+            "word": "nghe li",
+            "score": 0.1182
+          },
+          {
+            "word": "nghe khng",
+            "score": 0.0992
+          },
+          {
+            "word": "2026",
+            "score": 0.0962
+          },
+          {
+            "word": "2022",
+            "score": 0.0949
+          },
+          {
+            "word": "mh",
+            "score": 0.089
+          },
+          {
+            "word": "2021",
+            "score": 0.0875
+          }
+        ]
+      },
+      {
+        "topic_id": 25,
+        "name": "25_anh_em_a_chng",
+        "document_count": 45,
+        "percentage": 0.7,
+        "top_words": [
+          {
+            "word": "anh",
+            "score": 0.0326
+          },
+          {
+            "word": "em",
+            "score": 0.0276
+          },
+          {
+            "word": "a",
+            "score": 0.0269
+          },
+          {
+            "word": "chng",
+            "score": 0.0265
+          },
+          {
+            "word": "nhn",
+            "score": 0.0175
+          },
+          {
+            "word": "anh y",
+            "score": 0.0143
+          },
+          {
+            "word": "1",
+            "score": 0.0137
+          },
+          {
+            "word": "hn",
+            "score": 0.0121
+          },
+          {
+            "word": "chng em",
+            "score": 0.012
+          },
+          {
+            "word": "s",
+            "score": 0.0117
+          }
+        ]
+      },
+      {
+        "topic_id": 26,
+        "name": "26_mp_bi_hoang_ah",
+        "document_count": 43,
+        "percentage": 0.67,
+        "top_words": [
+          {
+            "word": "mp",
+            "score": 0.042
+          },
+          {
+            "word": "bi",
+            "score": 0.035
+          },
+          {
+            "word": "hoang",
+            "score": 0.0341
+          },
+          {
+            "word": "ah",
+            "score": 0.0337
+          },
+          {
+            "word": "mm",
+            "score": 0.033
+          },
+          {
+            "word": "e",
+            "score": 0.0318
+          },
+          {
+            "word": "ung",
+            "score": 0.0306
+          },
+          {
+            "word": "tap",
+            "score": 0.028
+          },
+          {
+            "word": "chuyn",
+            "score": 0.0279
+          },
+          {
+            "word": "phi lm",
+            "score": 0.0262
+          }
+        ]
+      },
+      {
+        "topic_id": 27,
+        "name": "27_ght_em_bn thn_thn",
+        "document_count": 40,
+        "percentage": 0.63,
+        "top_words": [
+          {
+            "word": "ght",
+            "score": 0.0453
+          },
+          {
+            "word": "em",
+            "score": 0.0371
+          },
+          {
+            "word": "bn thn",
+            "score": 0.0307
+          },
+          {
+            "word": "thn",
+            "score": 0.0283
+          },
+          {
+            "word": "ght bn",
+            "score": 0.0186
+          },
+          {
+            "word": "thn mnh",
+            "score": 0.0159
+          },
+          {
+            "word": "nhn",
+            "score": 0.0148
+          },
+          {
+            "word": "thy",
+            "score": 0.0143
+          },
+          {
+            "word": "s",
+            "score": 0.0137
+          },
+          {
+            "word": "nn",
+            "score": 0.0135
+          }
+        ]
+      },
+      {
+        "topic_id": 28,
+        "name": "28_lp_bt nt_nt_bn y",
+        "document_count": 39,
+        "percentage": 0.61,
+        "top_words": [
+          {
+            "word": "lp",
+            "score": 0.036
+          },
+          {
+            "word": "bt nt",
+            "score": 0.0348
+          },
+          {
+            "word": "nt",
+            "score": 0.0288
+          },
+          {
+            "word": "bn y",
+            "score": 0.0173
+          },
+          {
+            "word": "bo lc",
+            "score": 0.0172
+          },
+          {
+            "word": "lc",
+            "score": 0.017
+          },
+          {
+            "word": "b bt",
+            "score": 0.0166
+          },
+          {
+            "word": "bo",
+            "score": 0.0152
+          },
+          {
+            "word": "nm",
+            "score": 0.015
+          },
+          {
+            "word": "xu",
+            "score": 0.0137
+          }
+        ]
+      },
+      {
+        "topic_id": 29,
+        "name": "29_au_ni au_au n_tay",
+        "document_count": 37,
+        "percentage": 0.58,
+        "top_words": [
+          {
+            "word": "au",
+            "score": 0.0824
+          },
+          {
+            "word": "ni au",
+            "score": 0.0295
+          },
+          {
+            "word": "au n",
+            "score": 0.0285
+          },
+          {
+            "word": "tay",
+            "score": 0.0239
+          },
+          {
+            "word": "chu",
+            "score": 0.0189
+          },
+          {
+            "word": "b au",
+            "score": 0.0187
+          },
+          {
+            "word": "theo",
+            "score": 0.0172
+          },
+          {
+            "word": "phi",
+            "score": 0.0171
+          },
+          {
+            "word": "d",
+            "score": 0.0167
+          },
+          {
+            "word": "di",
+            "score": 0.0165
+          }
+        ]
+      },
+      {
+        "topic_id": 30,
+        "name": "30_n ci_bun_vui_khc",
+        "document_count": 36,
+        "percentage": 0.56,
+        "top_words": [
+          {
+            "word": "n ci",
+            "score": 0.0253
+          },
+          {
+            "word": "bun",
+            "score": 0.0208
+          },
+          {
+            "word": "vui",
+            "score": 0.0176
+          },
+          {
+            "word": "khc",
+            "score": 0.0168
+          },
+          {
+            "word": "ngh",
+            "score": 0.0162
+          },
+          {
+            "word": "bit",
+            "score": 0.0154
+          },
+          {
+            "word": "mi ngi",
+            "score": 0.0149
+          },
+          {
+            "word": "lc",
+            "score": 0.0145
+          },
+          {
+            "word": "t ci",
+            "score": 0.014
+          },
+          {
+            "word": "thn",
+            "score": 0.0132
+          }
+        ]
+      },
+      {
+        "topic_id": 31,
+        "name": "31_tin_nn_s_nm",
+        "document_count": 36,
+        "percentage": 0.56,
+        "top_words": [
+          {
+            "word": "tin",
+            "score": 0.025
+          },
+          {
+            "word": "nn",
+            "score": 0.0164
+          },
+          {
+            "word": "s",
+            "score": 0.0162
+          },
+          {
+            "word": "nm",
+            "score": 0.0157
+          },
+          {
+            "word": "ngy",
+            "score": 0.0141
+          },
+          {
+            "word": "s tin",
+            "score": 0.0137
+          },
+          {
+            "word": "n nn",
+            "score": 0.0135
+          },
+          {
+            "word": "tt",
+            "score": 0.0131
+          },
+          {
+            "word": "tr",
+            "score": 0.0131
+          },
+          {
+            "word": "tht bi",
+            "score": 0.0128
+          }
+        ]
+      },
+      {
+        "topic_id": 32,
+        "name": "32_tiu cc_tiu_cc_suy",
+        "document_count": 33,
+        "percentage": 0.52,
+        "top_words": [
+          {
+            "word": "tiu cc",
+            "score": 0.0535
+          },
+          {
+            "word": "tiu",
+            "score": 0.0494
+          },
+          {
+            "word": "cc",
+            "score": 0.0488
+          },
+          {
+            "word": "suy",
+            "score": 0.0359
+          },
+          {
+            "word": "suy ngh",
+            "score": 0.0356
+          },
+          {
+            "word": "ngh tiu",
+            "score": 0.0322
+          },
+          {
+            "word": "ngh",
+            "score": 0.0293
+          },
+          {
+            "word": "tch cc",
+            "score": 0.0237
+          },
+          {
+            "word": "tch",
+            "score": 0.0206
+          },
+          {
+            "word": "thn",
+            "score": 0.0158
+          }
+        ]
+      },
+      {
+        "topic_id": 33,
+        "name": "33_cuc_cuc sng_s_cuc i",
+        "document_count": 33,
+        "percentage": 0.52,
+        "top_words": [
+          {
+            "word": "cuc",
+            "score": 0.0333
+          },
+          {
+            "word": "cuc sng",
+            "score": 0.024
+          },
+          {
+            "word": "s",
+            "score": 0.0206
+          },
+          {
+            "word": "cuc i",
+            "score": 0.0203
+          },
+          {
+            "word": "ta",
+            "score": 0.0177
+          },
+          {
+            "word": "chng",
+            "score": 0.0149
+          },
+          {
+            "word": "trng",
+            "score": 0.0142
+          },
+          {
+            "word": "phi",
+            "score": 0.0142
+          },
+          {
+            "word": "cht",
+            "score": 0.0141
+          },
+          {
+            "word": "tng",
+            "score": 0.0129
+          }
+        ]
+      },
+      {
+        "topic_id": 34,
+        "name": "34_cht_t t_t st_mun cht",
+        "document_count": 31,
+        "percentage": 0.48,
+        "top_words": [
+          {
+            "word": "cht",
+            "score": 0.0601
+          },
+          {
+            "word": "t t",
+            "score": 0.0427
+          },
+          {
+            "word": "t st",
+            "score": 0.0371
+          },
+          {
+            "word": "mun cht",
+            "score": 0.0326
+          },
+          {
+            "word": "ngh",
+            "score": 0.0282
+          },
+          {
+            "word": "st",
+            "score": 0.0275
+          },
+          {
+            "word": "cch t",
+            "score": 0.0251
+          },
+          {
+            "word": "mun t",
+            "score": 0.0219
+          },
+          {
+            "word": "ngh ti",
+            "score": 0.0212
+          },
+          {
+            "word": "ci cht",
+            "score": 0.0212
+          }
+        ]
+      },
+      {
+        "topic_id": 35,
+        "name": "35_cuc i_cuc_mt mi_mun kt",
+        "document_count": 30,
+        "percentage": 0.47,
+        "top_words": [
+          {
+            "word": "cuc i",
+            "score": 0.0447
+          },
+          {
+            "word": "cuc",
+            "score": 0.0437
+          },
+          {
+            "word": "mt mi",
+            "score": 0.0402
+          },
+          {
+            "word": "mun kt",
+            "score": 0.0347
+          },
+          {
+            "word": "lc mun",
+            "score": 0.0318
+          },
+          {
+            "word": "qu mt",
+            "score": 0.0293
+          },
+          {
+            "word": "ti s",
+            "score": 0.0247
+          },
+          {
+            "word": "kt",
+            "score": 0.0234
+          },
+          {
+            "word": "s",
+            "score": 0.0226
+          },
+          {
+            "word": "phi",
+            "score": 0.0217
+          }
+        ]
+      }
+    ],
+    "split_outlier_rates": {
+      "train_outlier_pct": 33.49,
+      "val_outlier_pct": 45.15,
+      "test_outlier_pct": 45.51,
+      "vsmec_outlier_pct": 62.0
+    }
+  },
+  "dataset": {
+    "train": 6392,
+    "val": 1371,
+    "test": 1371,
+    "vsmec_full": 3084,
+    "vsmec_sadness_only": 2691
+  },
+  "bertopic_only": {
+    "val_selected_config": {
+      "C": 10.0,
+      "class_weight": "balanced",
+      "threshold": 0.5,
+      "val_f1_macro": 0.5611
+    },
+    "in_domain": {
+      "accuracy": 0.6272793581327498,
+      "precision": 0.27941176470588236,
+      "recall": 0.5608856088560885,
+      "f1_score": 0.37300613496932516,
+      "f1_depression": 0.37300613496932516,
+      "f1_normal": 0.7348209652309289,
+      "f1_macro": 0.553913550100127,
+      "f1_weighted": 0.6633024976883362,
+      "precision_macro": 0.5677590867060246,
+      "recall_macro": 0.602260986246226,
+      "predicted_positives": 544,
+      "predicted_negatives": 827,
+      "confusion_matrix": [
+        [
+          708,
+          392
+        ],
+        [
+          119,
+          152
+        ]
+      ],
+      "roc_auc": 0.6474656155652466,
+      "pr_auc": 0.2774529171770773
+    },
+    "cross_domain": {
+      "accuracy": 0.5408560311284046,
+      "precision": 0.5918367346938775,
+      "recall": 0.26329442282749677,
+      "f1_score": 0.3644524236983842,
+      "f1_depression": 0.3644524236983842,
+      "f1_normal": 0.6406091370558376,
+      "f1_macro": 0.5025307803771109,
+      "f1_weighted": 0.5025307803771109,
+      "precision_macro": 0.559054313969124,
+      "recall_macro": 0.5408560311284046,
+      "predicted_positives": 686,
+      "predicted_negatives": 2398,
+      "confusion_matrix": [
+        [
+          1262,
+          280
+        ],
+        [
+          1136,
+          406
+        ]
+      ],
+      "roc_auc": 0.6083389688800065,
+      "pr_auc": 0.5920430954824331
+    },
+    "cross_domain_sadness_only": {
+      "accuracy": 0.5834262356001486,
+      "precision": 0.5238095238095238,
+      "recall": 0.268059181897302,
+      "f1_score": 0.3546344271732873,
+      "f1_depression": 0.3546344271732873,
+      "f1_normal": 0.6924554183813443,
+      "f1_macro": 0.5235449227773158,
+      "f1_weighted": 0.5482130107640802,
+      "precision_macro": 0.5619523130222132,
+      "recall_macro": 0.5432384106633072,
+      "predicted_positives": 588,
+      "predicted_negatives": 2103,
+      "confusion_matrix": [
+        [
+          1262,
+          280
+        ],
+        [
+          841,
+          308
+        ]
+      ],
+      "roc_auc": 0.6152838028669829,
+      "pr_auc": 0.5268149137173957
+    }
+  },
+  "phobert_bertopic_combined": {
+    "protocol": {
+      "encoder_freezing": "PhoBERT encoder parameters frozen during CLS feature extraction",
+      "checkpoint_selection": "Evaluated across all 3 PhoBERT seeds (42, 123, 2024), each selected by best validation macro-F1 on final_val.csv",
+      "classifier_training": "StandardScaler + L2 LogisticRegression fitted strictly on final_train.csv (n=6,392); C selected on final_val.csv (n=1,371)",
+      "feature_dimension": 806,
+      "feature_breakdown": {
+        "phobert_cls_dim": 768,
+        "bertopic_proper_topics_onehot": 36,
+        "bertopic_explicit_outlier_slot": 1,
+        "bertopic_assignment_probability": 1
+      },
+      "per_seed_val_configs": {
+        "42": {
+          "C": 0.01,
+          "class_weight": null,
+          "threshold": 0.5,
+          "val_f1_macro": 0.7423,
+          "feature_dim": 806,
+          "phobert_dim": 768,
+          "topic_onehot_with_outlier_dim": 37,
+          "topic_prob_dim": 1
+        },
+        "123": {
+          "C": 0.01,
+          "class_weight": "balanced",
+          "threshold": 0.5,
+          "val_f1_macro": 0.7396,
+          "feature_dim": 806,
+          "phobert_dim": 768,
+          "topic_onehot_with_outlier_dim": 37,
+          "topic_prob_dim": 1
+        },
+        "2024": {
+          "C": 0.01,
+          "class_weight": null,
+          "threshold": 0.5,
+          "val_f1_macro": 0.7269,
+          "feature_dim": 806,
+          "phobert_dim": 768,
+          "topic_onehot_with_outlier_dim": 37,
+          "topic_prob_dim": 1
+        }
+      }
+    },
+    "in_domain": {
+      "accuracy": 0.8358862144420132,
+      "precision": 0.5991379310344828,
+      "recall": 0.5129151291512916,
+      "f1_score": 0.5526838966202783,
+      "f1_depression": 0.5526838966202783,
+      "f1_normal": 0.8995087092451988,
+      "f1_macro": 0.7260963029327385,
+      "f1_weighted": 0.8309532575884858,
+      "precision_macro": 0.7416233992310254,
+      "recall_macro": 0.7141848373029185,
+      "predicted_positives": 232,
+      "predicted_negatives": 1139,
+      "confusion_matrix": [
+        [
+          1007,
+          93
+        ],
+        [
+          132,
+          139
+        ]
+      ],
+      "roc_auc": 0.8183965112378397,
+      "pr_auc": 0.6110515057301146
+    },
+    "in_domain_majority_vote": {
+      "accuracy": 0.8373450036469731,
+      "precision": 0.6016949152542372,
+      "recall": 0.5239852398523985,
+      "f1_score": 0.5601577909270217,
+      "f1_depression": 0.5601577909270217,
+      "f1_normal": 0.9002237136465324,
+      "f1_macro": 0.730190752286777,
+      "f1_weighted": 0.8330042642978909,
+      "precision_macro": 0.7440192637945195,
+      "recall_macro": 0.7192653471989265,
+      "predicted_positives": 236,
+      "predicted_negatives": 1135,
+      "confusion_matrix": [
+        [
+          1006,
+          94
+        ],
+        [
+          129,
+          142
+        ]
+      ],
+      "roc_auc": 0.8183965112378397,
+      "pr_auc": 0.6110515057301146
+    },
+    "in_domain_soft_vote": {
+      "accuracy": 0.8358862144420132,
+      "precision": 0.5991379310344828,
+      "recall": 0.5129151291512916,
+      "f1_score": 0.5526838966202783,
+      "f1_depression": 0.5526838966202783,
+      "f1_normal": 0.8995087092451988,
+      "f1_macro": 0.7260963029327385,
+      "f1_weighted": 0.8309532575884858,
+      "precision_macro": 0.7416233992310254,
+      "recall_macro": 0.7141848373029185,
+      "predicted_positives": 232,
+      "predicted_negatives": 1139,
+      "confusion_matrix": [
+        [
+          1007,
+          93
+        ],
+        [
+          132,
+          139
+        ]
+      ],
+      "roc_auc": 0.8183965112378397,
+      "pr_auc": 0.6110515057301146
+    },
+    "in_domain_mean_std": {
+      "f1_macro_mean": 0.7235839057246136,
+      "f1_macro_std": 0.007323503257135953,
+      "accuracy_mean": 0.8319961098954535,
+      "accuracy_std": 0.016002414463315663
+    },
+    "in_domain_per_seed": {
+      "seed_42": {
+        "accuracy": 0.8446389496717724,
+        "precision": 0.638095238095238,
+        "recall": 0.4944649446494465,
+        "f1_score": 0.5571725571725572,
+        "f1_depression": 0.5571725571725572,
+        "f1_normal": 0.9057938965059709,
+        "f1_macro": 0.731483226839264,
+        "f1_weighted": 0.8368833327135894,
+        "precision_macro": 0.7600467577211762,
+        "recall_macro": 0.7126870177792687,
+        "predicted_positives": 210,
+        "predicted_negatives": 1161,
+        "confusion_matrix": [
+          [
+            1024,
+            76
+          ],
+          [
+            137,
+            134
+          ]
+        ],
+        "roc_auc": 0.8097584703119759,
+        "pr_auc": 0.5930383555154823
+      },
+      "seed_123": {
+        "accuracy": 0.8140043763676149,
+        "precision": 0.5256410256410257,
+        "recall": 0.6051660516605166,
+        "f1_score": 0.5626072041166381,
+        "f1_depression": 0.5626072041166381,
+        "f1_normal": 0.8818897637795275,
+        "f1_macro": 0.7222484839480828,
+        "f1_weighted": 0.8187784773691387,
+        "precision_macro": 0.7123011549357159,
+        "recall_macro": 0.735310298557531,
+        "predicted_positives": 312,
+        "predicted_negatives": 1059,
+        "confusion_matrix": [
+          [
+            952,
+            148
+          ],
+          [
+            107,
+            164
+          ]
+        ],
+        "roc_auc": 0.806829922844683,
+        "pr_auc": 0.5995404039426823
+      },
+      "seed_2024": {
+        "accuracy": 0.8373450036469731,
+        "precision": 0.616504854368932,
+        "recall": 0.46863468634686345,
+        "f1_score": 0.5324947589098532,
+        "f1_depression": 0.5324947589098532,
+        "f1_normal": 0.9015452538631347,
+        "f1_macro": 0.717020006386494,
+        "f1_weighted": 0.828596541877475,
+        "precision_macro": 0.7464498520771699,
+        "recall_macro": 0.6984082522643409,
+        "predicted_positives": 206,
+        "predicted_negatives": 1165,
+        "confusion_matrix": [
+          [
+            1021,
+            79
+          ],
+          [
+            144,
+            127
+          ]
+        ],
+        "roc_auc": 0.7970010063737,
+        "pr_auc": 0.579157147687754
+      }
+    },
+    "cross_domain": {
+      "accuracy": 0.5042153047989624,
+      "precision": 0.76,
+      "recall": 0.01232166018158236,
+      "f1_score": 0.024250159540523293,
+      "f1_depression": 0.024250159540523293,
+      "f1_normal": 0.6676809389263204,
+      "f1_macro": 0.3459655492334219,
+      "f1_weighted": 0.3459655492334219,
+      "precision_macro": 0.6310624387054593,
+      "recall_macro": 0.5042153047989624,
+      "predicted_positives": 25,
+      "predicted_negatives": 3059,
+      "confusion_matrix": [
+        [
+          1536,
+          6
+        ],
+        [
+          1523,
+          19
+        ]
+      ],
+      "roc_auc": 0.5678423089928185,
+      "pr_auc": 0.586278924902186
+    },
+    "cross_domain_majority_vote": {
+      "accuracy": 0.5042153047989624,
+      "precision": 0.76,
+      "recall": 0.01232166018158236,
+      "f1_score": 0.024250159540523293,
+      "f1_depression": 0.024250159540523293,
+      "f1_normal": 0.6676809389263204,
+      "f1_macro": 0.3459655492334219,
+      "f1_weighted": 0.3459655492334219,
+      "precision_macro": 0.6310624387054593,
+      "recall_macro": 0.5042153047989624,
+      "predicted_positives": 25,
+      "predicted_negatives": 3059,
+      "confusion_matrix": [
+        [
+          1536,
+          6
+        ],
+        [
+          1523,
+          19
+        ]
+      ],
+      "roc_auc": 0.5678423089928185,
+      "pr_auc": 0.586278924902186
+    },
+    "cross_domain_soft_vote": {
+      "accuracy": 0.5042153047989624,
+      "precision": 0.76,
+      "recall": 0.01232166018158236,
+      "f1_score": 0.024250159540523293,
+      "f1_depression": 0.024250159540523293,
+      "f1_normal": 0.6676809389263204,
+      "f1_macro": 0.3459655492334219,
+      "f1_weighted": 0.3459655492334219,
+      "precision_macro": 0.6310624387054593,
+      "recall_macro": 0.5042153047989624,
+      "predicted_positives": 25,
+      "predicted_negatives": 3059,
+      "confusion_matrix": [
+        [
+          1536,
+          6
+        ],
+        [
+          1523,
+          19
+        ]
+      ],
+      "roc_auc": 0.5678423089928185,
+      "pr_auc": 0.586278924902186
+    },
+    "cross_domain_mean_std": {
+      "f1_macro_mean": 0.3508611848030801,
+      "f1_macro_std": 0.010868479865738178,
+      "accuracy_mean": 0.5062689148292261,
+      "accuracy_std": 0.004231900551329836
+    },
+    "cross_domain_per_seed": {
+      "seed_42": {
+        "accuracy": 0.504863813229572,
+        "precision": 0.8,
+        "recall": 0.01297016861219196,
+        "f1_score": 0.025526483726866625,
+        "f1_depression": 0.025526483726866625,
+        "f1_normal": 0.6681156270376005,
+        "f1_macro": 0.34682105538223357,
+        "f1_weighted": 0.34682105538223357,
+        "precision_macro": 0.6512258908139915,
+        "recall_macro": 0.504863813229572,
+        "predicted_positives": 25,
+        "predicted_negatives": 3059,
+        "confusion_matrix": [
+          [
+            1537,
+            5
+          ],
+          [
+            1522,
+            20
+          ]
+        ],
+        "roc_auc": 0.5993315568744417,
+        "pr_auc": 0.6102349514757299
+      },
+      "seed_123": {
+        "accuracy": 0.5110246433203631,
+        "precision": 0.8035714285714286,
+        "recall": 0.029182879377431907,
+        "f1_score": 0.056320400500625784,
+        "f1_depression": 0.056320400500625784,
+        "f1_normal": 0.6700218818380744,
+        "f1_macro": 0.3631711411693501,
+        "f1_weighted": 0.3631711411693501,
+        "precision_macro": 0.6545928477071146,
+        "recall_macro": 0.5110246433203631,
+        "predicted_positives": 56,
+        "predicted_negatives": 3028,
+        "confusion_matrix": [
+          [
+            1531,
+            11
+          ],
+          [
+            1497,
+            45
+          ]
+        ],
+        "roc_auc": 0.5386640558104169,
+        "pr_auc": 0.5596501731975776
+      },
+      "seed_2024": {
+        "accuracy": 0.5029182879377432,
+        "precision": 0.7368421052631579,
+        "recall": 0.009079118028534372,
+        "f1_score": 0.017937219730941704,
+        "f1_depression": 0.017937219730941704,
+        "f1_normal": 0.6672454959843717,
+        "f1_macro": 0.3425913578576567,
+        "f1_weighted": 0.3425913578576567,
+        "precision_macro": 0.6191551472482184,
+        "recall_macro": 0.5029182879377432,
+        "predicted_positives": 19,
+        "predicted_negatives": 3065,
+        "confusion_matrix": [
+          [
+            1537,
+            5
+          ],
+          [
+            1528,
+            14
+          ]
+        ],
+        "roc_auc": 0.5823092619789012,
+        "pr_auc": 0.5972311261074542
+      }
+    },
+    "cross_domain_sadness_only": {
+      "accuracy": 0.5771088814567076,
+      "precision": 0.7391304347826086,
+      "recall": 0.014795474325500435,
+      "f1_score": 0.02901023890784983,
+      "f1_depression": 0.02901023890784983,
+      "f1_normal": 0.7296912114014252,
+      "f1_macro": 0.3793507251546375,
+      "f1_weighted": 0.4305152777726188,
+      "precision_macro": 0.6574212893553223,
+      "recall_macro": 0.5054522118709215,
+      "predicted_positives": 23,
+      "predicted_negatives": 2668,
+      "confusion_matrix": [
+        [
+          1536,
+          6
+        ],
+        [
+          1132,
+          17
+        ]
+      ],
+      "roc_auc": 0.5669882681494877,
+      "pr_auc": 0.5231873866992243
+    },
+    "cross_domain_sadness_only_per_seed": {
+      "seed_42": {
+        "accuracy": 0.5771088814567076,
+        "precision": 0.7619047619047619,
+        "recall": 0.01392515230635335,
+        "f1_score": 0.02735042735042735,
+        "f1_depression": 0.02735042735042735,
+        "f1_normal": 0.7298195631528965,
+        "f1_macro": 0.37858499525166195,
+        "f1_weighted": 0.4298801216675613,
+        "precision_macro": 0.6687800963081862,
+        "recall_macro": 0.5053413050766526,
+        "predicted_positives": 21,
+        "predicted_negatives": 2670,
+        "confusion_matrix": [
+          [
+            1537,
+            5
+          ],
+          [
+            1133,
+            16
+          ]
+        ],
+        "roc_auc": 0.604465169622488,
+        "pr_auc": 0.5481316844950604
+      },
+      "seed_123": {
+        "accuracy": 0.5837978446674099,
+        "precision": 0.7843137254901961,
+        "recall": 0.034812880765883375,
+        "f1_score": 0.06666666666666667,
+        "f1_depression": 0.06666666666666667,
+        "f1_normal": 0.7321855571496891,
+        "f1_macro": 0.3994261119081779,
+        "f1_weighted": 0.4480230877461243,
+        "precision_macro": 0.6821189839572193,
+        "recall_macro": 0.5138396440145889,
+        "predicted_positives": 51,
+        "predicted_negatives": 2640,
+        "confusion_matrix": [
+          [
+            1531,
+            11
+          ],
+          [
+            1109,
+            40
+          ]
+        ],
+        "roc_auc": 0.5332082598187788,
+        "pr_auc": 0.4919009044886302
+      },
+      "seed_2024": {
+        "accuracy": 0.5759940542549238,
+        "precision": 0.7222222222222222,
+        "recall": 0.011314186248912098,
+        "f1_score": 0.022279348757497857,
+        "f1_depression": 0.022279348757497857,
+        "f1_normal": 0.729300118623962,
+        "f1_macro": 0.37578973369072993,
+        "f1_weighted": 0.42741722580472485,
+        "precision_macro": 0.6486157875046764,
+        "recall_macro": 0.5040358220479321,
+        "predicted_positives": 18,
+        "predicted_negatives": 2673,
+        "confusion_matrix": [
+          [
+            1537,
+            5
+          ],
+          [
+            1136,
+            13
+          ]
+        ],
+        "roc_auc": 0.5936030767181523,
+        "pr_auc": 0.5393328226903609
+      }
+    }
+  }
+}

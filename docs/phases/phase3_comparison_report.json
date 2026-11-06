@@ -1,0 +1,201 @@
+{
+  "timestamp": "2026-06-20T16:16:20.515072",
+  "phase": 3,
+  "models": [
+    {
+      "model": "TF-IDF + SVM",
+      "in_domain": {
+        "accuracy": 0.9387,
+        "precision_macro": 0.9308,
+        "recall_macro": 0.9316,
+        "f1_macro": 0.9312,
+        "f1_weighted": 0.9388,
+        "f1_depression": 0.9084,
+        "confusion_matrix": [
+          [
+            487,
+            24
+          ],
+          [
+            23,
+            233
+          ]
+        ]
+      },
+      "cross_domain": {
+        "accuracy": 0.5412,
+        "precision_macro": 0.6944,
+        "recall_macro": 0.5412,
+        "f1_macro": 0.4286,
+        "f1_weighted": 0.4286,
+        "f1_depression": 0.1749,
+        "confusion_matrix": [
+          [
+            1519,
+            23
+          ],
+          [
+            1392,
+            150
+          ]
+        ]
+      }
+    },
+    {
+      "model": "BiLSTM",
+      "in_domain": {
+        "accuracy": 0.9061,
+        "precision_macro": 0.8929,
+        "recall_macro": 0.8974,
+        "f1_macro": 0.8951,
+        "f1_weighted": 0.9064,
+        "f1_depression": 0.861,
+        "confusion_matrix": [
+          [
+            472,
+            39
+          ],
+          [
+            33,
+            223
+          ]
+        ]
+      },
+      "cross_domain": {
+        "accuracy": 0.535,
+        "precision_macro": 0.6417,
+        "recall_macro": 0.535,
+        "f1_macro": 0.4272,
+        "f1_weighted": 0.4272,
+        "f1_depression": 0.1787,
+        "confusion_matrix": [
+          [
+            1494,
+            48
+          ],
+          [
+            1386,
+            156
+          ]
+        ]
+      }
+    },
+    {
+      "model": "PhoBERT",
+      "in_domain": {
+        "accuracy": 0.9661,
+        "precision_macro": 0.9575,
+        "recall_macro": 0.9677,
+        "f1_macro": 0.9623,
+        "f1_weighted": 0.9663,
+        "f1_depression": 0.9504,
+        "confusion_matrix": [
+          [
+            492,
+            19
+          ],
+          [
+            7,
+            249
+          ]
+        ]
+      },
+      "cross_domain": {
+        "accuracy": 0.5464,
+        "precision_macro": 0.7399,
+        "recall_macro": 0.5464,
+        "f1_macro": 0.4318,
+        "f1_weighted": 0.4318,
+        "f1_depression": 0.1766,
+        "confusion_matrix": [
+          [
+            1535,
+            7
+          ],
+          [
+            1392,
+            150
+          ]
+        ]
+      }
+    },
+    {
+      "model": "BERTopic-only",
+      "in_domain": {
+        "accuracy": 0.5698,
+        "precision_macro": 0.5753,
+        "recall_macro": 0.5845,
+        "f1_macro": 0.5599,
+        "f1_weighted": 0.5818,
+        "f1_depression": 0.4939,
+        "confusion_matrix": [
+          [
+            276,
+            235
+          ],
+          [
+            95,
+            161
+          ]
+        ]
+      },
+      "cross_domain": {
+        "accuracy": 0.5088,
+        "precision_macro": 0.5092,
+        "recall_macro": 0.5088,
+        "f1_macro": 0.503,
+        "f1_weighted": 0.503,
+        "f1_depression": 0.5566,
+        "confusion_matrix": [
+          [
+            618,
+            924
+          ],
+          [
+            591,
+            951
+          ]
+        ]
+      }
+    },
+    {
+      "model": "PhoBERT + BERTopic",
+      "in_domain": {
+        "accuracy": 0.9557,
+        "precision_macro": 0.951,
+        "recall_macro": 0.9492,
+        "f1_macro": 0.9501,
+        "f1_weighted": 0.9556,
+        "f1_depression": 0.9333,
+        "confusion_matrix": [
+          [
+            495,
+            16
+          ],
+          [
+            18,
+            238
+          ]
+        ]
+      },
+      "cross_domain": {
+        "accuracy": 0.5279,
+        "precision_macro": 0.7063,
+        "recall_macro": 0.5279,
+        "f1_macro": 0.3977,
+        "f1_weighted": 0.3977,
+        "f1_depression": 0.1176,
+        "confusion_matrix": [
+          [
+            1531,
+            11
+          ],
+          [
+            1445,
+            97
+          ]
+        ]
+      }
+    }
+  ]
+}

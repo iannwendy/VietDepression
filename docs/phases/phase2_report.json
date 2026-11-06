@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-06-20T15:36:25.477495",
+  "phase": 2,
+  "gold_splits": {
+    "total_rows": 1607,
+    "train_rows": 1124,
+    "val_rows": 241,
+    "test_rows": 242,
+    "train_labels": {
+      "0": 1010,
+      "1": 114
+    }
+  },
+  "phobert_v2_train": {
+    "best_epoch": 2,
+    "best_val_f1": 0.8843,
+    "test_f1_macro": 0.8124,
+    "test_f1_depression": 0.6667
+  },
+  "phobert_v2_predictions": {
+    "predicted_total": 123721,
+    "confident_total": 116340,
+    "confident_labels": {
+      "normal": 110802,
+      "depression": 5538
+    }
+  },
+  "final_dataset": {
+    "final_rows": 11703,
+    "depression": 1703,
+    "normal": 10000,
+    "sources": {
+      "external_negative": 10000,
+      "phobert_v2_confident": 905,
+      "weak_high_conf": 635,
+      "human_gold": 163
+    },
+    "output": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/data/final_dataset.csv"
+  }
+}

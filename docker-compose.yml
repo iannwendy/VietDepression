@@ -1,0 +1,13 @@
+services:
+  youtube-crawler:
+    build: .
+    container_name: youtube_depression_crawler
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./models:/app/models
+    restart: unless-stopped

@@ -1,0 +1,47 @@
+{
+  "round": 3,
+  "total_selected": 1500,
+  "input_predictions_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/data/phobert_remaining_predictions_v2.csv",
+  "already_reviewed_gold": 1607,
+  "already_reviewed_active_learning": 1000,
+  "remaining_pool_size": 123648,
+  "bucket_stats": {
+    "weak_model_disagreement": {
+      "available": 1958,
+      "taken": 500,
+      "target": 500
+    },
+    "boundary_probability": {
+      "available": 657,
+      "taken": 400,
+      "target": 400
+    },
+    "low_confidence": {
+      "available": 1984,
+      "taken": 350,
+      "target": 350
+    },
+    "source_uncertain": {
+      "available": 94932,
+      "taken": 250,
+      "target": 250
+    }
+  },
+  "phobert_label_distribution": {
+    "normal": 800,
+    "depression": 700
+  },
+  "source_weak_label_distribution": {
+    "uncertain": 927,
+    "normal_auto": 310,
+    "depression_auto": 263
+  },
+  "probability_range": {
+    "min": 0.5,
+    "max": 0.8522,
+    "median": 0.571
+  },
+  "output_import_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/docs/label_studio_round3_active_learning_import.csv",
+  "output_key_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/docs/label_studio_round3_active_learning_key.csv",
+  "instructions": "1. Import label_studio_round3_active_learning_import.csv into Label Studio (Settings → Labeling Interface → Code — use the same XML config as before). 2. After review, export CSV and rename to export_round3_active_learning.csv. 3. Run the merge script to combine final_label back via row_id in the key file. IMPORTANT: This is a BLIND review file — annotators see ONLY row_id + text. DO NOT share the key file with annotators."
+}

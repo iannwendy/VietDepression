@@ -1,0 +1,28 @@
+{
+  "protocol_version": "round6_v2_test600",
+  "split_strategy": "70% train / 15% val / 15% test from all 9,134 gold samples",
+  "split": {
+    "train": {
+      "rows": 6392,
+      "depression": 1262,
+      "depression_rate": 0.1974
+    },
+    "val": {
+      "rows": 1371,
+      "depression": 271,
+      "depression_rate": 0.1977
+    },
+    "test": {
+      "rows": 1371,
+      "depression": 271,
+      "depression_rate": 0.1977
+    }
+  },
+  "sources": {
+    "pre_r5_gold": 2072,
+    "r5_gold": 1360,
+    "r6_gold": 5702,
+    "total": 9134
+  },
+  "integrity_pass": true
+}

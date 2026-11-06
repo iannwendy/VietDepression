@@ -1,0 +1,99 @@
+{
+  "protocol_version": "round5_repair_v2",
+  "random_seed": 42,
+  "split_policy": {
+    "pre_round5_training_gold": "existing unique train_gold rows",
+    "validation_test": "fixed historical val_gold/test_gold; never resplit",
+    "round5_human_gold": "train only",
+    "weak_high_confidence": "train only",
+    "validation_test_labels": "human only",
+    "cross_domain": "strict holdout; exact overlap removed before training"
+  },
+  "recovery": {
+    "pre_round5_training_gold_rows": 2072,
+    "fixed_validation_gold_rows": 241,
+    "fixed_test_gold_rows": 242,
+    "round5_unique_rows": 1360,
+    "round5_label_distribution": {
+      "0": 1163,
+      "1": 197
+    },
+    "combined_gold_rows": 3432,
+    "all_human_gold_rows_including_fixed_holdouts": 3915,
+    "training_gold_rows_removed_for_fixed_holdout_overlap": 0,
+    "corrupted_snapshot": "data/_archive/train_gold_corrupted_round5_20260724.csv",
+    "canonical_round5_file": "data/round5/round5_reviewed_clean.csv"
+  },
+  "datasets": {
+    "final_dataset": {
+      "rows": 7819,
+      "labels": {
+        "0": 6587,
+        "1": 1232
+      }
+    },
+    "final_train": {
+      "rows": 7336,
+      "labels": {
+        "0": 6153,
+        "1": 1183
+      },
+      "sources": {
+        "weak_high_conf": 3904,
+        "human_gold_pre_round5": 2072,
+        "human_gold_round5": 1360
+      }
+    },
+    "final_val": {
+      "rows": 241,
+      "labels": {
+        "0": 217,
+        "1": 24
+      }
+    },
+    "final_test": {
+      "rows": 242,
+      "labels": {
+        "0": 217,
+        "1": 25
+      }
+    },
+    "cross_domain": {
+      "rows": 3084,
+      "labels": {
+        "0": 1542,
+        "1": 1542
+      }
+    }
+  },
+  "weak_rows_removed_for_gold_or_cross_overlap": 323,
+  "integrity": {
+    "null_or_blank_text": {
+      "train": 0,
+      "val": 0,
+      "test": 0,
+      "cross_domain": 0
+    },
+    "duplicate_text_within_split": {
+      "train": 0,
+      "val": 0,
+      "test": 0,
+      "cross_domain": 0
+    },
+    "overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0,
+      "train_cross_domain": 0,
+      "val_cross_domain": 0,
+      "test_cross_domain": 0
+    },
+    "invalid_labels": {
+      "train": 0,
+      "val": 0,
+      "test": 0,
+      "cross_domain": 0
+    }
+  },
+  "integrity_pass": true
+}

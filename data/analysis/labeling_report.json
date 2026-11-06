@@ -1,0 +1,756 @@
+{
+  "auto_labeling": {
+    "total_input": 125328,
+    "total_labeled": 125328,
+    "label_counts": {
+      "uncertain": 98410,
+      "normal_auto": 23695,
+      "depression_auto": 3223
+    },
+    "confidence_counts": {
+      "low": 98410,
+      "medium": 22690,
+      "high": 4228
+    },
+    "need_review_count": 120334,
+    "high_confidence_depression": 779,
+    "high_confidence_normal": 3449,
+    "top_matched_keywords": [
+      [
+        "cảm ơn",
+        14185
+      ],
+      [
+        "hay quá",
+        4621
+      ],
+      [
+        "tuyệt vời",
+        3319
+      ],
+      [
+        "rất hay",
+        2518
+      ],
+      [
+        "cô đơn",
+        2217
+      ],
+      [
+        "áp lực",
+        1861
+      ],
+      [
+        "ủng hộ",
+        1763
+      ],
+      [
+        "trầm cảm",
+        1576
+      ],
+      [
+        "mệt mỏi",
+        1245
+      ],
+      [
+        "tự ti",
+        1138
+      ],
+      [
+        "burnout",
+        1048
+      ],
+      [
+        "dễ thương",
+        915
+      ],
+      [
+        "stress",
+        795
+      ],
+      [
+        "mất ngủ",
+        756
+      ],
+      [
+        "cố lên",
+        730
+      ],
+      [
+        "tổn thương",
+        633
+      ],
+      [
+        "bổ ích",
+        585
+      ],
+      [
+        "chúc mừng",
+        580
+      ],
+      [
+        "lo âu",
+        537
+      ],
+      [
+        "tự tử",
+        398
+      ],
+      [
+        "đau lòng",
+        333
+      ],
+      [
+        "đáng yêu",
+        306
+      ],
+      [
+        "tuyệt vọng",
+        289
+      ],
+      [
+        "quá đỉnh",
+        263
+      ],
+      [
+        "buồn quá",
+        259
+      ],
+      [
+        "đỉnh quá",
+        259
+      ],
+      [
+        "chán nản",
+        250
+      ],
+      [
+        "bất lực",
+        245
+      ],
+      [
+        "hài quá",
+        182
+      ],
+      [
+        "trống rỗng",
+        180
+      ]
+    ]
+  },
+  "initial_train": {
+    "initial_train_rows": 3759,
+    "requested_depression": 10000,
+    "requested_normal": 10000,
+    "selected_depression": 456,
+    "selected_normal": 3303,
+    "available_high_confidence_depression": 456,
+    "available_high_confidence_normal": 3303,
+    "min_chars": 10,
+    "max_chars": 500,
+    "random_seed": 42
+  },
+  "review_samples": {
+    "review_rows": 750,
+    "sample_per_bucket": 150,
+    "bucket_counts": {
+      "depression_high": 150,
+      "normal_high": 150,
+      "uncertain": 150,
+      "need_review": 150,
+      "boundary": 150
+    }
+  },
+  "splits": {
+    "total_rows": 3759,
+    "train_rows": 2631,
+    "val_rows": 564,
+    "test_rows": 564,
+    "label_counts": {
+      "0": 3303,
+      "1": 456
+    },
+    "train_label_counts": {
+      "0": 2312,
+      "1": 319
+    },
+    "val_label_counts": {
+      "0": 495,
+      "1": 69
+    },
+    "test_label_counts": {
+      "0": 496,
+      "1": 68
+    },
+    "label_mapping": {
+      "normal": 0,
+      "depression": 1
+    },
+    "ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    }
+  },
+  "baseline_model": {
+    "train_rows": 4255,
+    "val_rows": 912,
+    "test_rows": 912,
+    "label_mapping": {
+      "normal": 0,
+      "depression": 1
+    },
+    "validation": {
+      "accuracy": 0.9101,
+      "precision_macro": 0.8305,
+      "recall_macro": 0.8927,
+      "f1_macro": 0.8563,
+      "f1_depression": 0.7684,
+      "confusion_matrix": [
+        [
+          694,
+          61
+        ],
+        [
+          21,
+          136
+        ]
+      ],
+      "classification_report": {
+        "normal": {
+          "precision": 0.9706293706293706,
+          "recall": 0.919205298013245,
+          "f1-score": 0.9442176870748299,
+          "support": 755.0
+        },
+        "depression": {
+          "precision": 0.6903553299492385,
+          "recall": 0.8662420382165605,
+          "f1-score": 0.768361581920904,
+          "support": 157.0
+        },
+        "accuracy": 0.9100877192982456,
+        "macro avg": {
+          "precision": 0.8304923502893046,
+          "recall": 0.8927236681149028,
+          "f1-score": 0.856289634497867,
+          "support": 912.0
+        },
+        "weighted avg": {
+          "precision": 0.9223804403807075,
+          "recall": 0.9100877192982456,
+          "f1-score": 0.913944212832323,
+          "support": 912.0
+        }
+      }
+    },
+    "test": {
+      "accuracy": 0.8947,
+      "precision_macro": 0.8073,
+      "recall_macro": 0.886,
+      "f1_macro": 0.8373,
+      "f1_depression": 0.7405,
+      "confusion_matrix": [
+        [
+          679,
+          76
+        ],
+        [
+          20,
+          137
+        ]
+      ],
+      "classification_report": {
+        "normal": {
+          "precision": 0.9713876967095851,
+          "recall": 0.8993377483443709,
+          "f1-score": 0.9339752407152683,
+          "support": 755.0
+        },
+        "depression": {
+          "precision": 0.6431924882629108,
+          "recall": 0.8726114649681529,
+          "f1-score": 0.7405405405405405,
+          "support": 157.0
+        },
+        "accuracy": 0.8947368421052632,
+        "macro avg": {
+          "precision": 0.807290092486248,
+          "recall": 0.8859746066562619,
+          "f1-score": 0.8372578906279045,
+          "support": 912.0
+        },
+        "weighted avg": {
+          "precision": 0.9148891794660239,
+          "recall": 0.8947368421052632,
+          "f1-score": 0.9006756267597504,
+          "support": 912.0
+        }
+      }
+    },
+    "model_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/models/tfidf_logreg.joblib"
+  },
+  "gold_review": {
+    "review_rows": 1,
+    "gold_rows": 1,
+    "final_label_counts": {
+      "normal": 1
+    },
+    "gold_label_counts": {
+      "normal": 1
+    },
+    "label_mapping": {
+      "normal": 0,
+      "depression": 1
+    },
+    "excluded_from_gold": 0
+  },
+  "review_eval": {
+    "gold_rows": 2515,
+    "evaluated_rows": 343,
+    "skipped_uncertain": 2172,
+    "accuracy": 0.8251,
+    "precision_macro": 0.8015,
+    "recall_macro": 0.8729,
+    "f1_macro": 0.8092,
+    "f1_depression": 0.7541,
+    "confusion_matrix": [
+      [
+        191,
+        58
+      ],
+      [
+        2,
+        92
+      ]
+    ],
+    "classification_report": {
+      "normal": {
+        "precision": 0.9896373056994818,
+        "recall": 0.7670682730923695,
+        "f1-score": 0.8642533936651584,
+        "support": 249.0
+      },
+      "depression": {
+        "precision": 0.6133333333333333,
+        "recall": 0.9787234042553191,
+        "f1-score": 0.7540983606557377,
+        "support": 94.0
+      },
+      "accuracy": 0.8250728862973761,
+      "macro avg": {
+        "precision": 0.8014853195164076,
+        "recall": 0.8728958386738443,
+        "f1-score": 0.809175877160448,
+        "support": 343.0
+      },
+      "weighted avg": {
+        "precision": 0.8865102695408288,
+        "recall": 0.8250728862973761,
+        "f1-score": 0.8340651338899818,
+        "support": 343.0
+      }
+    },
+    "error_rows": 60,
+    "errors_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/data/review_eval_errors.csv"
+  },
+  "baseline_gold_eval": {
+    "gold_rows": 2515,
+    "accuracy": 0.6354,
+    "precision_macro": 0.5832,
+    "recall_macro": 0.7282,
+    "f1_macro": 0.5334,
+    "f1_depression": 0.3152,
+    "confusion_matrix": [
+      [
+        1387,
+        878
+      ],
+      [
+        39,
+        211
+      ]
+    ],
+    "classification_report": {
+      "normal": {
+        "precision": 0.9726507713884993,
+        "recall": 0.6123620309050772,
+        "f1-score": 0.7515578434028719,
+        "support": 2265.0
+      },
+      "depression": {
+        "precision": 0.19375573921028466,
+        "recall": 0.844,
+        "f1-score": 0.31516056758775207,
+        "support": 250.0
+      },
+      "accuracy": 0.6353876739562624,
+      "macro avg": {
+        "precision": 0.583203255299392,
+        "recall": 0.7281810154525385,
+        "f1-score": 0.533359205495312,
+        "support": 2515.0
+      },
+      "weighted avg": {
+        "precision": 0.8952258178916589,
+        "recall": 0.6353876739562624,
+        "f1-score": 0.7081783925266174,
+        "support": 2515.0
+      }
+    },
+    "model_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/models/tfidf_logreg.joblib",
+    "error_rows": 917,
+    "errors_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/data/baseline_gold_errors.csv"
+  },
+  "phobert_first": {
+    "model_name": "models/phobert_base_local",
+    "output_dir": "results/round4_final_eval_20260704_110307/original_seed2024",
+    "device": "mps",
+    "train_rows": 4255,
+    "val_rows": 912,
+    "test_rows": 912,
+    "best_epoch": 3,
+    "best_val_f1_macro": 0.8571,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.4821,
+        "validation": {
+          "accuracy": 0.9002,
+          "precision_macro": 0.8232,
+          "recall_macro": 0.8313,
+          "f1_macro": 0.8271,
+          "f1_depression": 0.7147,
+          "confusion_matrix": [
+            [
+              707,
+              48
+            ],
+            [
+              43,
+              114
+            ]
+          ],
+          "classification_report": {
+            "normal": {
+              "precision": 0.9426666666666667,
+              "recall": 0.9364238410596026,
+              "f1-score": 0.9395348837209302,
+              "support": 755.0
+            },
+            "depression": {
+              "precision": 0.7037037037037037,
+              "recall": 0.7261146496815286,
+              "f1-score": 0.7147335423197492,
+              "support": 157.0
+            },
+            "accuracy": 0.9002192982456141,
+            "macro avg": {
+              "precision": 0.8231851851851852,
+              "recall": 0.8312692453705657,
+              "f1-score": 0.8271342130203396,
+              "support": 912.0
+            },
+            "weighted avg": {
+              "precision": 0.9015294022092268,
+              "recall": 0.9002192982456141,
+              "f1-score": 0.900835529992876,
+              "support": 912.0
+            }
+          }
+        }
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.3344,
+        "validation": {
+          "accuracy": 0.9178,
+          "precision_macro": 0.8682,
+          "recall_macro": 0.8318,
+          "f1_macro": 0.8484,
+          "f1_depression": 0.7458,
+          "confusion_matrix": [
+            [
+              727,
+              28
+            ],
+            [
+              47,
+              110
+            ]
+          ],
+          "classification_report": {
+            "normal": {
+              "precision": 0.9392764857881137,
+              "recall": 0.9629139072847682,
+              "f1-score": 0.9509483322432962,
+              "support": 755.0
+            },
+            "depression": {
+              "precision": 0.7971014492753623,
+              "recall": 0.7006369426751592,
+              "f1-score": 0.7457627118644068,
+              "support": 157.0
+            },
+            "accuracy": 0.9177631578947368,
+            "macro avg": {
+              "precision": 0.868188967531738,
+              "recall": 0.8317754249799637,
+              "f1-score": 0.8483555220538515,
+              "support": 912.0
+            },
+            "weighted avg": {
+              "precision": 0.9148011779673879,
+              "recall": 0.9177631578947368,
+              "f1-score": 0.9156258076824567,
+              "support": 912.0
+            }
+          }
+        }
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.2406,
+        "validation": {
+          "accuracy": 0.9211,
+          "precision_macro": 0.8692,
+          "recall_macro": 0.8464,
+          "f1_macro": 0.8571,
+          "f1_depression": 0.7616,
+          "confusion_matrix": [
+            [
+              725,
+              30
+            ],
+            [
+              42,
+              115
+            ]
+          ],
+          "classification_report": {
+            "normal": {
+              "precision": 0.9452411994784876,
+              "recall": 0.9602649006622517,
+              "f1-score": 0.9526938239159002,
+              "support": 755.0
+            },
+            "depression": {
+              "precision": 0.7931034482758621,
+              "recall": 0.732484076433121,
+              "f1-score": 0.7615894039735099,
+              "support": 157.0
+            },
+            "accuracy": 0.9210526315789473,
+            "macro avg": {
+              "precision": 0.8691723238771749,
+              "recall": 0.8463744885476863,
+              "f1-score": 0.857141613944705,
+              "support": 912.0
+            },
+            "weighted avg": {
+              "precision": 0.9190508190631234,
+              "recall": 0.9210526315789473,
+              "f1-score": 0.9197953656582739,
+              "support": 912.0
+            }
+          }
+        }
+      }
+    ],
+    "test": {
+      "accuracy": 0.9189,
+      "precision_macro": 0.8588,
+      "recall_macro": 0.8551,
+      "f1_macro": 0.8569,
+      "f1_depression": 0.7628,
+      "confusion_matrix": [
+        [
+          719,
+          36
+        ],
+        [
+          38,
+          119
+        ]
+      ],
+      "classification_report": {
+        "normal": {
+          "precision": 0.9498018494055482,
+          "recall": 0.952317880794702,
+          "f1-score": 0.951058201058201,
+          "support": 755.0
+        },
+        "depression": {
+          "precision": 0.7677419354838709,
+          "recall": 0.7579617834394905,
+          "f1-score": 0.7628205128205128,
+          "support": 157.0
+        },
+        "accuracy": 0.918859649122807,
+        "macro avg": {
+          "precision": 0.8587718924447096,
+          "recall": 0.8551398321170962,
+          "f1-score": 0.8569393569393569,
+          "support": 912.0
+        },
+        "weighted avg": {
+          "precision": 0.9184603949256103,
+          "recall": 0.918859649122807,
+          "f1-score": 0.9186532481488622,
+          "support": 912.0
+        }
+      }
+    },
+    "gold": {
+      "accuracy": 0.8668,
+      "precision_macro": 0.6918,
+      "recall_macro": 0.8282,
+      "f1_macro": 0.7301,
+      "f1_depression": 0.5379,
+      "confusion_matrix": [
+        [
+          1985,
+          280
+        ],
+        [
+          55,
+          195
+        ]
+      ],
+      "classification_report": {
+        "normal": {
+          "precision": 0.9730392156862745,
+          "recall": 0.8763796909492274,
+          "f1-score": 0.9221835075493612,
+          "support": 2265.0
+        },
+        "depression": {
+          "precision": 0.4105263157894737,
+          "recall": 0.78,
+          "f1-score": 0.5379310344827586,
+          "support": 250.0
+        },
+        "accuracy": 0.8667992047713717,
+        "macro avg": {
+          "precision": 0.6917827657378741,
+          "recall": 0.8281898454746137,
+          "f1-score": 0.7300572710160599,
+          "support": 2515.0
+        },
+        "weighted avg": {
+          "precision": 0.9171234204679046,
+          "recall": 0.8667992047713717,
+          "f1-score": 0.8839874366679892,
+          "support": 2515.0
+        }
+      }
+    },
+    "settings": {
+      "max_length": 128,
+      "batch_size": 8,
+      "eval_batch_size": 16,
+      "epochs": 3,
+      "learning_rate": 2e-05,
+      "weight_decay": 0.01
+    }
+  },
+  "baseline_svc_model": {
+    "train_rows": 1786,
+    "val_rows": 383,
+    "test_rows": 383,
+    "label_mapping": {
+      "normal": 0,
+      "depression": 1
+    },
+    "C": 1.0,
+    "validation": {
+      "accuracy": 0.9347,
+      "precision_macro": 0.9217,
+      "recall_macro": 0.9354,
+      "f1_macro": 0.9279,
+      "f1_depression": 0.9057,
+      "confusion_matrix": [
+        [
+          238,
+          17
+        ],
+        [
+          8,
+          120
+        ]
+      ],
+      "classification_report": {
+        "normal": {
+          "precision": 0.967479674796748,
+          "recall": 0.9333333333333333,
+          "f1-score": 0.9500998003992016,
+          "support": 255.0
+        },
+        "depression": {
+          "precision": 0.8759124087591241,
+          "recall": 0.9375,
+          "f1-score": 0.9056603773584906,
+          "support": 128.0
+        },
+        "accuracy": 0.9347258485639687,
+        "macro avg": {
+          "precision": 0.9216960417779361,
+          "recall": 0.9354166666666667,
+          "f1-score": 0.9278800888788461,
+          "support": 383.0
+        },
+        "weighted avg": {
+          "precision": 0.936877559776341,
+          "recall": 0.9347258485639687,
+          "f1-score": 0.9352479827772407,
+          "support": 383.0
+        }
+      }
+    },
+    "test": {
+      "accuracy": 0.846,
+      "precision_macro": 0.8247,
+      "recall_macro": 0.8332,
+      "f1_macro": 0.8286,
+      "f1_depression": 0.7739,
+      "confusion_matrix": [
+        [
+          223,
+          33
+        ],
+        [
+          26,
+          101
+        ]
+      ],
+      "classification_report": {
+        "normal": {
+          "precision": 0.8955823293172691,
+          "recall": 0.87109375,
+          "f1-score": 0.8831683168316832,
+          "support": 256.0
+        },
+        "depression": {
+          "precision": 0.753731343283582,
+          "recall": 0.7952755905511811,
+          "f1-score": 0.7739463601532567,
+          "support": 127.0
+        },
+        "accuracy": 0.8459530026109661,
+        "macro avg": {
+          "precision": 0.8246568363004256,
+          "recall": 0.8331846702755905,
+          "f1-score": 0.8285573384924699,
+          "support": 383.0
+        },
+        "weighted avg": {
+          "precision": 0.8485455793792058,
+          "recall": 0.8459530026109661,
+          "f1-score": 0.8469511144866174,
+          "support": 383.0
+        }
+      }
+    },
+    "model_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/models/tfidf_svc.joblib"
+  }
+}

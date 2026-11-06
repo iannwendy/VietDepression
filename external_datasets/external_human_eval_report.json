@@ -1,0 +1,27 @@
+{
+  "human_eval": {
+    "total": 3084,
+    "label_counts": {
+      "0": 1542,
+      "1": 1542
+    },
+    "source": "VSMEC only (single annotation scheme)",
+    "positive_from": "Sadness + Fear",
+    "negative_from": "Enjoyment",
+    "balanced_per_class": 1542,
+    "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/external_human_eval.csv"
+  },
+  "augmentation_negatives": {
+    "total": 44932,
+    "by_source": {
+      "thainq107/ntc-scv": 24937,
+      "tridm/UIT-VSFC": 8038,
+      "anotherpolarbear/vietnamese-sentiment-analysis": 6287,
+      "minhtoan/vietnamese-comment-sentiment": 2052,
+      "duwuonline/UIT-VSMEC": 1963,
+      "sepidmnorozy/Vietnamese_sentiment": 1655
+    },
+    "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/external_augmentation_negatives.csv"
+  },
+  "caveat": "distress (Sadness/Fear) là proxy cảm xúc do người gán, KHÔNG phải chẩn đoán trầm cảm lâm sàng. Dùng cho đánh giá cross-domain và augmentation, không kết luận y tế."
+}

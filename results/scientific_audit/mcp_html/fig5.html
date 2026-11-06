@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #ffffff;
+    font-family: "Times New Roman", "STIX Two Text", "Georgia", serif;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
+  }
+  .sans {
+    font-family: "Helvetica Neue", "Inter", "Arial", sans-serif;
+  }
+  .mono {
+    font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  }
+  #figure-root {
+    background: #ffffff;
+    display: inline-block;
+    padding: 20px 24px;
+    zoom: 3.2;
+  }
+
+#figure-root {
+  width: 1180px;
+  min-height: 515px;
+}
+</style>
+</head>
+<body>
+<div id="figure-root">
+
+    <div style="display: flex; flex-direction: column; gap: 14px; background: #ffffff;">
+      <div style="display: flex; gap: 14px;">
+        
+        <div style="flex: 1; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 10px 12px; background: #ffffff;">
+          <div style="font-size: 13.2px; font-weight: 700; color: #0f172a; text-align:center;">(a) PhoBERT-base In-Domain (Majority Vote)</div>
+          <div class="mono" style="font-size: 10px; font-weight: 600; color: #1e3a8a; text-align:center; margin: 2px 0 8px 0;">
+            Macro-F1 = 0.7265 | Acc = 80.96% | F1-Dep = 0.5756 | Pred Pos = 344
+          </div>
+
+          <!-- 3x3 Diagnostic Confusion Matrix Table (with Row Recall & Col Precision Marginals) -->
+          <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 11.5px;">
+            <thead>
+              <tr>
+                <th style="width: 26%; padding: 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10px; color: #475569;">Actual \ Pred</th>
+                <th class="sans" style="width: 27%; padding: 5px; border: 1px solid #cbd5e1; background: #f1f5f9; font-size: 10.5px; color: #0f172a;">Pred Normal (0)</th>
+                <th class="sans" style="width: 27%; padding: 5px; border: 1px solid #cbd5e1; background: #f1f5f9; font-size: 10.5px; color: #0f172a;">Pred Depression (1)</th>
+                <th class="sans" style="width: 20%; padding: 5px; border: 1px solid #cbd5e1; background: #e2e8f0; font-size: 10px; color: #0f172a;">Row Recall</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 0: True Negative Class -->
+              <tr>
+                <td class="sans" style="padding: 8px 6px; border: 1px solid #cbd5e1; background: #f1f5f9; font-weight: 700; font-size: 10.5px; color: #0f172a;">
+                  True Normal (0)<br/><span class="mono" style="font-size:9.5px; font-weight:400; color:#475569;">(n = 1,100)</span>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #1e40af; color: #ffffff;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; opacity: 0.9; letter-spacing:0.3px;">TRUE NEGATIVE (TN)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">933</div>
+                  <div class="mono" style="font-size: 10px; opacity: 0.95;">(84.8% of row)</div>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #fff1f2; color: #881337;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #9f1239;">FALSE POSITIVE (FP)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">167</div>
+                  <div class="mono" style="font-size: 10px;">(15.2% of row)</div>
+                </td>
+                <td class="mono" style="padding: 8px 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 11px; font-weight: 700; color: #0f766e;">
+                  84.8%<br/><span style="font-size:9px; color:#64748b; font-weight:400;">Spec.</span>
+                </td>
+              </tr>
+              <!-- Row 1: True Positive Class -->
+              <tr>
+                <td class="sans" style="padding: 8px 6px; border: 1px solid #cbd5e1; background: #f1f5f9; font-weight: 700; font-size: 10.5px; color: #0f172a;">
+                  True Depression (1)<br/><span class="mono" style="font-size:9.5px; font-weight:400; color:#475569;">(n = 271)</span>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #fffbeb; color: #78350f;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #92400e;">FALSE NEGATIVE (FN)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">94</div>
+                  <div class="mono" style="font-size: 10px;">(34.7% of row)</div>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #dbeafe; color: #0f172a;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #1e3a8a;">TRUE POSITIVE (TP)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0; color: #1e3a8a;">177</div>
+                  <div class="mono" style="font-size: 10px; font-weight: 600;">(65.3% of row)</div>
+                </td>
+                <td class="mono" style="padding: 8px 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 11px; font-weight: 700; color: #1e3a8a;">
+                  65.3%<br/><span style="font-size:9px; color:#64748b; font-weight:400;">Sens.</span>
+                </td>
+              </tr>
+              <!-- Bottom Marginal Row: Column Precision -->
+              <tr>
+                <td class="sans" style="padding: 6px; border: 1px solid #cbd5e1; background: #e2e8f0; font-weight: 700; font-size: 10px; color: #0f172a;">
+                  Col Precision
+                </td>
+                <td class="mono" style="padding: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10.8px; font-weight: 700; color: #0f172a;">
+                  90.8% <span style="font-size:9.2px; font-weight:400; color:#475569;">(NPV, n=1,027)</span>
+                </td>
+                <td class="mono" style="padding: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10.8px; font-weight: 700; color: #1e3a8a;">
+                  51.5% <span style="font-size:9.2px; font-weight:400; color:#475569;">(PPV, n=344)</span>
+                </td>
+                <td class="mono" style="padding: 6px; border: 1.5px solid #0f172a; background: #0f172a; font-size: 10.8px; font-weight: 700; color: #ffffff;">
+                  Acc: 81.0%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        
+        <div style="flex: 1; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 10px 12px; background: #ffffff;">
+          <div style="font-size: 13.2px; font-weight: 700; color: #0f172a; text-align:center;">(b) TF-IDF + Logistic Regression In-Domain</div>
+          <div class="mono" style="font-size: 10px; font-weight: 600; color: #9a3412; text-align:center; margin: 2px 0 8px 0;">
+            Macro-F1 = 0.7138 | Acc = 79.36% | F1-Dep = 0.5626 | Pred Pos = 376
+          </div>
+
+          <!-- 3x3 Diagnostic Confusion Matrix Table (with Row Recall & Col Precision Marginals) -->
+          <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 11.5px;">
+            <thead>
+              <tr>
+                <th style="width: 26%; padding: 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10px; color: #475569;">Actual \ Pred</th>
+                <th class="sans" style="width: 27%; padding: 5px; border: 1px solid #cbd5e1; background: #f1f5f9; font-size: 10.5px; color: #0f172a;">Pred Normal (0)</th>
+                <th class="sans" style="width: 27%; padding: 5px; border: 1px solid #cbd5e1; background: #f1f5f9; font-size: 10.5px; color: #0f172a;">Pred Depression (1)</th>
+                <th class="sans" style="width: 20%; padding: 5px; border: 1px solid #cbd5e1; background: #e2e8f0; font-size: 10px; color: #0f172a;">Row Recall</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 0: True Negative Class -->
+              <tr>
+                <td class="sans" style="padding: 8px 6px; border: 1px solid #cbd5e1; background: #f1f5f9; font-weight: 700; font-size: 10.5px; color: #0f172a;">
+                  True Normal (0)<br/><span class="mono" style="font-size:9.5px; font-weight:400; color:#475569;">(n = 1,100)</span>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #c2410c; color: #ffffff;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; opacity: 0.9; letter-spacing:0.3px;">TRUE NEGATIVE (TN)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">906</div>
+                  <div class="mono" style="font-size: 10px; opacity: 0.95;">(82.4% of row)</div>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #fff1f2; color: #881337;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #9f1239;">FALSE POSITIVE (FP)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">194</div>
+                  <div class="mono" style="font-size: 10px;">(17.6% of row)</div>
+                </td>
+                <td class="mono" style="padding: 8px 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 11px; font-weight: 700; color: #0f766e;">
+                  82.4%<br/><span style="font-size:9px; color:#64748b; font-weight:400;">Spec.</span>
+                </td>
+              </tr>
+              <!-- Row 1: True Positive Class -->
+              <tr>
+                <td class="sans" style="padding: 8px 6px; border: 1px solid #cbd5e1; background: #f1f5f9; font-weight: 700; font-size: 10.5px; color: #0f172a;">
+                  True Depression (1)<br/><span class="mono" style="font-size:9.5px; font-weight:400; color:#475569;">(n = 271)</span>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #fffbeb; color: #78350f;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #92400e;">FALSE NEGATIVE (FN)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">89</div>
+                  <div class="mono" style="font-size: 10px;">(32.8% of row)</div>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #ffedd5; color: #0f172a;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #9a3412;">TRUE POSITIVE (TP)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0; color: #9a3412;">182</div>
+                  <div class="mono" style="font-size: 10px; font-weight: 600;">(67.2% of row)</div>
+                </td>
+                <td class="mono" style="padding: 8px 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 11px; font-weight: 700; color: #9a3412;">
+                  67.2%<br/><span style="font-size:9px; color:#64748b; font-weight:400;">Sens.</span>
+                </td>
+              </tr>
+              <!-- Bottom Marginal Row: Column Precision -->
+              <tr>
+                <td class="sans" style="padding: 6px; border: 1px solid #cbd5e1; background: #e2e8f0; font-weight: 700; font-size: 10px; color: #0f172a;">
+                  Col Precision
+                </td>
+                <td class="mono" style="padding: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10.8px; font-weight: 700; color: #0f172a;">
+                  91.1% <span style="font-size:9.2px; font-weight:400; color:#475569;">(NPV, n=995)</span>
+                </td>
+                <td class="mono" style="padding: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10.8px; font-weight: 700; color: #9a3412;">
+                  48.4% <span style="font-size:9.2px; font-weight:400; color:#475569;">(PPV, n=376)</span>
+                </td>
+                <td class="mono" style="padding: 6px; border: 1.5px solid #0f172a; background: #0f172a; font-size: 10.8px; font-weight: 700; color: #ffffff;">
+                  Acc: 79.4%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+      <div style="display: flex; gap: 14px;">
+        
+        <div style="flex: 1; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 10px 12px; background: #ffffff;">
+          <div style="font-size: 13.2px; font-weight: 700; color: #0f172a; text-align:center;">(c) PhoBERT-base External (Uncalibrated τ = 0.50)</div>
+          <div class="mono" style="font-size: 10px; font-weight: 600; color: #115e59; text-align:center; margin: 2px 0 8px 0;">
+            Full UIT-VSMEC (n = 3,084): Macro-F1 = 0.3620 | ROC-AUC = 0.6993 | Pred Pos = 53
+          </div>
+
+          <!-- 3x3 Diagnostic Confusion Matrix Table (with Row Recall & Col Precision Marginals) -->
+          <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 11.5px;">
+            <thead>
+              <tr>
+                <th style="width: 26%; padding: 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10px; color: #475569;">Actual \ Pred</th>
+                <th class="sans" style="width: 27%; padding: 5px; border: 1px solid #cbd5e1; background: #f1f5f9; font-size: 10.5px; color: #0f172a;">Pred Enjoyment (0)</th>
+                <th class="sans" style="width: 27%; padding: 5px; border: 1px solid #cbd5e1; background: #f1f5f9; font-size: 10.5px; color: #0f172a;">Pred Sad/Fear (1)</th>
+                <th class="sans" style="width: 20%; padding: 5px; border: 1px solid #cbd5e1; background: #e2e8f0; font-size: 10px; color: #0f172a;">Row Recall</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 0: True Negative Class -->
+              <tr>
+                <td class="sans" style="padding: 8px 6px; border: 1px solid #cbd5e1; background: #f1f5f9; font-weight: 700; font-size: 10.5px; color: #0f172a;">
+                  True Enjoyment (0)<br/><span class="mono" style="font-size:9.5px; font-weight:400; color:#475569;">(n = 1,542)</span>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #0f766e; color: #ffffff;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; opacity: 0.9; letter-spacing:0.3px;">TRUE NEGATIVE (TN)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">1,532</div>
+                  <div class="mono" style="font-size: 10px; opacity: 0.95;">(99.4% of row)</div>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #fff1f2; color: #881337;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #9f1239;">FALSE POSITIVE (FP)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">10</div>
+                  <div class="mono" style="font-size: 10px;">(0.6% of row)</div>
+                </td>
+                <td class="mono" style="padding: 8px 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 11px; font-weight: 700; color: #0f766e;">
+                  99.4%<br/><span style="font-size:9px; color:#64748b; font-weight:400;">Spec.</span>
+                </td>
+              </tr>
+              <!-- Row 1: True Positive Class -->
+              <tr>
+                <td class="sans" style="padding: 8px 6px; border: 1px solid #cbd5e1; background: #f1f5f9; font-weight: 700; font-size: 10.5px; color: #0f172a;">
+                  True Sad/Fear (1)<br/><span class="mono" style="font-size:9.5px; font-weight:400; color:#475569;">(n = 1,542)</span>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #fffbeb; color: #78350f;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #92400e;">FALSE NEGATIVE (FN)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">1,499</div>
+                  <div class="mono" style="font-size: 10px;">(97.2% of row)</div>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #ccfbf1; color: #0f172a;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #115e59;">TRUE POSITIVE (TP)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0; color: #115e59;">43</div>
+                  <div class="mono" style="font-size: 10px; font-weight: 600;">(2.8% of row)</div>
+                </td>
+                <td class="mono" style="padding: 8px 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 11px; font-weight: 700; color: #115e59;">
+                  2.8%<br/><span style="font-size:9px; color:#64748b; font-weight:400;">Sens.</span>
+                </td>
+              </tr>
+              <!-- Bottom Marginal Row: Column Precision -->
+              <tr>
+                <td class="sans" style="padding: 6px; border: 1px solid #cbd5e1; background: #e2e8f0; font-weight: 700; font-size: 10px; color: #0f172a;">
+                  Col Precision
+                </td>
+                <td class="mono" style="padding: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10.8px; font-weight: 700; color: #0f172a;">
+                  50.5% <span style="font-size:9.2px; font-weight:400; color:#475569;">(NPV, n=3,031)</span>
+                </td>
+                <td class="mono" style="padding: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10.8px; font-weight: 700; color: #115e59;">
+                  81.1% <span style="font-size:9.2px; font-weight:400; color:#475569;">(PPV, n=53)</span>
+                </td>
+                <td class="mono" style="padding: 6px; border: 1.5px solid #0f172a; background: #0f172a; font-size: 10.8px; font-weight: 700; color: #ffffff;">
+                  Acc: 51.1%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        
+        <div style="flex: 1; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 10px 12px; background: #ffffff;">
+          <div style="font-size: 13.2px; font-weight: 700; color: #0f172a; text-align:center;">(d) PhoBERT-base External (Calibrated τ = 0.05)</div>
+          <div class="mono" style="font-size: 10px; font-weight: 600; color: #7f1d1d; text-align:center; margin: 2px 0 8px 0;">
+            Sadness-Only (n = 2,691): Macro-F1 = 0.6161 | ROC-AUC = 0.7078 | Rec-Pos = 75.8%
+          </div>
+
+          <!-- 3x3 Diagnostic Confusion Matrix Table (with Row Recall & Col Precision Marginals) -->
+          <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 11.5px;">
+            <thead>
+              <tr>
+                <th style="width: 26%; padding: 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10px; color: #475569;">Actual \ Pred</th>
+                <th class="sans" style="width: 27%; padding: 5px; border: 1px solid #cbd5e1; background: #f1f5f9; font-size: 10.5px; color: #0f172a;">Pred Enjoyment (0)</th>
+                <th class="sans" style="width: 27%; padding: 5px; border: 1px solid #cbd5e1; background: #f1f5f9; font-size: 10.5px; color: #0f172a;">Pred Sadness (1)</th>
+                <th class="sans" style="width: 20%; padding: 5px; border: 1px solid #cbd5e1; background: #e2e8f0; font-size: 10px; color: #0f172a;">Row Recall</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 0: True Negative Class -->
+              <tr>
+                <td class="sans" style="padding: 8px 6px; border: 1px solid #cbd5e1; background: #f1f5f9; font-weight: 700; font-size: 10.5px; color: #0f172a;">
+                  True Enjoyment (0)<br/><span class="mono" style="font-size:9.5px; font-weight:400; color:#475569;">(n = 1,542)</span>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #b91c1c; color: #ffffff;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; opacity: 0.9; letter-spacing:0.3px;">TRUE NEGATIVE (TN)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">788</div>
+                  <div class="mono" style="font-size: 10px; opacity: 0.95;">(51.1% of row)</div>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #fff1f2; color: #881337;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #9f1239;">FALSE POSITIVE (FP)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">754</div>
+                  <div class="mono" style="font-size: 10px;">(48.9% of row)</div>
+                </td>
+                <td class="mono" style="padding: 8px 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 11px; font-weight: 700; color: #0f766e;">
+                  51.1%<br/><span style="font-size:9px; color:#64748b; font-weight:400;">Spec.</span>
+                </td>
+              </tr>
+              <!-- Row 1: True Positive Class -->
+              <tr>
+                <td class="sans" style="padding: 8px 6px; border: 1px solid #cbd5e1; background: #f1f5f9; font-weight: 700; font-size: 10.5px; color: #0f172a;">
+                  True Sadness (1)<br/><span class="mono" style="font-size:9.5px; font-weight:400; color:#475569;">(n = 1,149)</span>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #fffbeb; color: #78350f;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #92400e;">FALSE NEGATIVE (FN)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0;">278</div>
+                  <div class="mono" style="font-size: 10px;">(24.2% of row)</div>
+                </td>
+                <td style="padding: 10px 6px; border: 1.5px solid #0f172a; background: #fee2e2; color: #0f172a;">
+                  <div class="sans" style="font-size: 9px; font-weight: 700; color: #7f1d1d;">TRUE POSITIVE (TP)</div>
+                  <div class="mono" style="font-size: 15px; font-weight: 700; margin: 2px 0; color: #7f1d1d;">871</div>
+                  <div class="mono" style="font-size: 10px; font-weight: 600;">(75.8% of row)</div>
+                </td>
+                <td class="mono" style="padding: 8px 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 11px; font-weight: 700; color: #7f1d1d;">
+                  75.8%<br/><span style="font-size:9px; color:#64748b; font-weight:400;">Sens.</span>
+                </td>
+              </tr>
+              <!-- Bottom Marginal Row: Column Precision -->
+              <tr>
+                <td class="sans" style="padding: 6px; border: 1px solid #cbd5e1; background: #e2e8f0; font-weight: 700; font-size: 10px; color: #0f172a;">
+                  Col Precision
+                </td>
+                <td class="mono" style="padding: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10.8px; font-weight: 700; color: #0f172a;">
+                  73.9% <span style="font-size:9.2px; font-weight:400; color:#475569;">(NPV, n=1,066)</span>
+                </td>
+                <td class="mono" style="padding: 6px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 10.8px; font-weight: 700; color: #7f1d1d;">
+                  53.6% <span style="font-size:9.2px; font-weight:400; color:#475569;">(PPV, n=1,625)</span>
+                </td>
+                <td class="mono" style="padding: 6px; border: 1.5px solid #0f172a; background: #0f172a; font-size: 10.8px; font-weight: 700; color: #ffffff;">
+                  Acc: 61.6%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+    
+</div>
+</body>
+</html>

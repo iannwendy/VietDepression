@@ -1,0 +1,82 @@
+{
+  "input_rows": 191169,
+  "weak_label_counts": {
+    "uncertain": 177744,
+    "normal_auto": 12759,
+    "depression_auto": 666
+  },
+  "affect_signal_counts": {
+    "neutral": 88814,
+    "positive": 44932,
+    "negative": 38398,
+    "toxic": 17483,
+    "distress": 1542
+  },
+  "crosstab_affect_x_weaklabel": {
+    "distress": {
+      "depression_auto": 14,
+      "normal_auto": 18,
+      "uncertain": 1510
+    },
+    "negative": {
+      "depression_auto": 87,
+      "normal_auto": 3328,
+      "uncertain": 34983
+    },
+    "neutral": {
+      "depression_auto": 478,
+      "normal_auto": 3438,
+      "uncertain": 84898
+    },
+    "positive": {
+      "depression_auto": 75,
+      "normal_auto": 5738,
+      "uncertain": 39119
+    },
+    "toxic": {
+      "depression_auto": 12,
+      "normal_auto": 237,
+      "uncertain": 17234
+    }
+  },
+  "depression_candidates": {
+    "total": 666,
+    "agree_with_affect": 113,
+    "by_affect": {
+      "neutral": 478,
+      "negative": 87,
+      "positive": 75,
+      "distress": 14,
+      "toxic": 12
+    },
+    "by_source": {
+      "minhtoan/vietnamese-comment-sentiment": 383,
+      "thainq107/ntc-scv": 89,
+      "thanh29nt/vietnamese-toxic-comment": 87,
+      "zerostratos/vietnamese_toxic_core": 40,
+      "duwuonline/UIT-VSMEC": 29,
+      "anotherpolarbear/vietnamese-sentiment-analysis": 19,
+      "tridm/UIT-VSFC": 14,
+      "sepidmnorozy/Vietnamese_sentiment": 5
+    },
+    "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/external_depression_candidates.csv"
+  },
+  "hard_negatives": {
+    "total": 44857,
+    "by_source": {
+      "thainq107/ntc-scv": 24910,
+      "tridm/UIT-VSFC": 8031,
+      "anotherpolarbear/vietnamese-sentiment-analysis": 6279,
+      "minhtoan/vietnamese-comment-sentiment": 2024,
+      "duwuonline/UIT-VSMEC": 1959,
+      "sepidmnorozy/Vietnamese_sentiment": 1654
+    },
+    "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/external_hard_negatives.csv"
+  },
+  "distress_keyword_recall": {
+    "distress_rows": 1542,
+    "keyword_flagged_depression": 14,
+    "recall": 0.0091
+  },
+  "processed_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/external_processed.csv"
+}

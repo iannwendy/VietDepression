@@ -1,0 +1,47 @@
+{
+  "benchmark": "VietDepression",
+  "release_governance": "Two-Tier Protocol (Public De-Identified Manifests + Controlled-Access Text via DUA)",
+  "hash_algorithm": "SHA-256 over Unicode NFC + single-space normalized UTF-8 comment text",
+  "total_gold_records": 9134,
+  "total_positive_1": 1804,
+  "total_negative_0": 7330,
+  "unique_sha256_hashes": 9134,
+  "cross_split_hash_overlap": 0,
+  "contains_raw_comment_text": false,
+  "contains_youtube_comment_or_video_ids": false,
+  "splits": {
+    "train": {
+      "manifest_file": "data/manifests/final_train_manifest.csv",
+      "total": 6392,
+      "positive_1": 1262,
+      "negative_0": 5130,
+      "positive_rate_pct": 19.74,
+      "unique_sha256": 6392
+    },
+    "val": {
+      "manifest_file": "data/manifests/final_val_manifest.csv",
+      "total": 1371,
+      "positive_1": 271,
+      "negative_0": 1100,
+      "positive_rate_pct": 19.77,
+      "unique_sha256": 1371
+    },
+    "test": {
+      "manifest_file": "data/manifests/final_test_manifest.csv",
+      "total": 1371,
+      "positive_1": 271,
+      "negative_0": 1100,
+      "positive_rate_pct": 19.77,
+      "unique_sha256": 1371
+    }
+  },
+  "external_vsmec_proxy": {
+    "manifest_file": "data/manifests/uit_vsmec_proxy_manifest.csv",
+    "full_proxy_total": 3084,
+    "full_proxy_positive": 1542,
+    "full_proxy_negative": 1542,
+    "sadness_only_total": 2691,
+    "sadness_only_positive": 1149,
+    "sadness_only_negative": 1542
+  }
+}

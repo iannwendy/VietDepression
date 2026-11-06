@@ -1,0 +1,100 @@
+{
+  "phase1_timestamp": "2026-06-26T16:05:44.849487",
+  "weak_label_eval": {
+    "gold_rows": 2515,
+    "evaluated_rows": 343,
+    "skipped_uncertain": 2172,
+    "accuracy": 0.8251,
+    "precision_macro": 0.8015,
+    "recall_macro": 0.8729,
+    "f1_macro": 0.8092,
+    "f1_depression": 0.7541,
+    "confusion_matrix": [
+      [
+        191,
+        58
+      ],
+      [
+        2,
+        92
+      ]
+    ],
+    "classification_report": {
+      "normal": {
+        "precision": 0.9896373056994818,
+        "recall": 0.7670682730923695,
+        "f1-score": 0.8642533936651584,
+        "support": 249.0
+      },
+      "depression": {
+        "precision": 0.6133333333333333,
+        "recall": 0.9787234042553191,
+        "f1-score": 0.7540983606557377,
+        "support": 94.0
+      },
+      "accuracy": 0.8250728862973761,
+      "macro avg": {
+        "precision": 0.8014853195164076,
+        "recall": 0.8728958386738443,
+        "f1-score": 0.809175877160448,
+        "support": 343.0
+      },
+      "weighted avg": {
+        "precision": 0.8865102695408288,
+        "recall": 0.8250728862973761,
+        "f1-score": 0.8340651338899818,
+        "support": 343.0
+      }
+    },
+    "error_rows": 60,
+    "errors_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/data/review_eval_errors.csv"
+  },
+  "baseline_gold_eval": {
+    "gold_rows": 2515,
+    "accuracy": 0.6354,
+    "precision_macro": 0.5832,
+    "recall_macro": 0.7282,
+    "f1_macro": 0.5334,
+    "f1_depression": 0.3152,
+    "confusion_matrix": [
+      [
+        1387,
+        878
+      ],
+      [
+        39,
+        211
+      ]
+    ],
+    "classification_report": {
+      "normal": {
+        "precision": 0.9726507713884993,
+        "recall": 0.6123620309050772,
+        "f1-score": 0.7515578434028719,
+        "support": 2265.0
+      },
+      "depression": {
+        "precision": 0.19375573921028466,
+        "recall": 0.844,
+        "f1-score": 0.31516056758775207,
+        "support": 250.0
+      },
+      "accuracy": 0.6353876739562624,
+      "macro avg": {
+        "precision": 0.583203255299392,
+        "recall": 0.7281810154525385,
+        "f1-score": 0.533359205495312,
+        "support": 2515.0
+      },
+      "weighted avg": {
+        "precision": 0.8952258178916589,
+        "recall": 0.6353876739562624,
+        "f1-score": 0.7081783925266174,
+        "support": 2515.0
+      }
+    },
+    "model_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/models/tfidf_logreg.joblib",
+    "error_rows": 917,
+    "errors_file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/data/baseline_gold_errors.csv"
+  }
+}

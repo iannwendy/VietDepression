@@ -1,0 +1,57 @@
+{
+  "approach": "Huong 2 - tach theo muc dich buoc, mot corpus chung",
+  "target_task": "binary depression/normal",
+  "files": {
+    "corpus_text_all.csv": {
+      "rows": 316401,
+      "columns": [
+        "text",
+        "source",
+        "source_dataset",
+        "affect_signal",
+        "is_holdout_text"
+      ],
+      "used_by": [
+        "Lam sach chung",
+        "BERTopic (topic modeling)",
+        "Domain-adapt PhoBERT (MLM) - co the loc is_holdout_text=True"
+      ],
+      "note": "Toan bo text YouTube + external. KHONG dung lam nhan supervised.",
+      "by_source": {
+        "external": 191072,
+        "youtube": 125329
+      },
+      "holdout_text_rows": 3084
+    },
+    "cross_domain_test.csv": {
+      "rows": 3084,
+      "used_by": [
+        "Test set CO DINH cho moi model (baseline/SVM/BiLSTM/PhoBERT/PhoBERT+BERTopic)"
+      ],
+      "note": "VSMEC Sadness/Fear=1, Enjoyment=0. KHONG BAO GIO vao train."
+    },
+    "augmentation_negatives.csv": {
+      "rows": 42952,
+      "used_by": [
+        "Bo sung lop normal (hard-negative) khi train depression"
+      ],
+      "note": "Positive-affect nguoi-gan, nguon != VSMEC, da loc trung voi holdout.",
+      "by_source": {
+        "thainq107/ntc-scv": 24937,
+        "tridm/UIT-VSFC": 8038,
+        "anotherpolarbear/vietnamese-sentiment-analysis": 6286,
+        "minhtoan/vietnamese-comment-sentiment": 2043,
+        "sepidmnorozy/Vietnamese_sentiment": 1648
+      }
+    }
+  },
+  "excluded_from_train": {
+    "neutral_toxic_negative_external": "Chi nam trong corpus_text_all cho topic/text, KHONG vao tap train depression",
+    "reason": "Recall keyword tren distress = 0.91%; negative sentiment != tram cam"
+  },
+  "supervised_train_sources": {
+    "positive_label_1": "YouTube depression_auto (weak) + review thu cong (gold/active-learning sau khi review)",
+    "negative_label_0": "YouTube normal_auto (weak) + augmentation_negatives (external positive-affect)",
+    "note": "VSMEC KHONG vao train de tranh leakage voi cross_domain_test"
+  }
+}

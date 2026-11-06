@@ -1,0 +1,126 @@
+.env
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+**/*.pyc
+.DS_Store
+logs/*.log
+data/*.csv
+data/*.txt
+data/*.json
+models/*.joblib
+models/*.json
+models/phobert_first/
+models/phobert_second/
+models/phase3/
+models/bertopic/
+models/phobert_base_local/
+# Domain-adapted base checkpoint: ~540MB safetensors; reproduce via
+# `python3 scripts/domain_adaptive_pretrain.py` (see README "Reproducing").
+models/phobert_domain_adapted/
+
+# Domain-adapted evaluation checkpoints (large; reproduce via scripts/evaluate_domain_adapted_phobert.py)
+results/domain_adapted_eval_*/original_seed*/
+results/domain_adapted_eval_*/domain_adapted_seed*/
+
+# Background process artifacts (point-in-time; not part of source)
+results_smoke.log
+
+# External + unified datasets: large generated CSVs (tai tao bang script).
+# Giu lai: *.py, *_report.json, manifest.json, file import Label Studio, test set holdout nho.
+external_datasets/external_processed.csv
+external_datasets/external_vietnamese_combined.csv
+external_datasets/external_depression_candidates.csv
+external_datasets/external_hard_negatives.csv
+external_datasets/external_augmentation_negatives.csv
+external_datasets/raw_per_dataset/
+data_unified/corpus_text_all.csv
+data_unified/augmentation_negatives.csv
+
+# Archive: snapshot cũ (v1, backup_before_phase1, ...) — KHÔNG track,
+# giữ local-only cho audit. README.md trong archive vẫn track để giải thích.
+data/_archive/*.csv
+
+# Round 3 raw export (800KB human review output) — local-only, không track.
+# Key_MERGED.csv đã chứa final_label nên reproduce được từ đó.
+docs/export_round3_active_learning.csv
+
+# ============================================================
+# Large artifacts
+# ============================================================
+
+# Trained model weights (.pt and .safetensors files)
+models/**/*.pt
+models/**/*.safetensors
+models/**/*.bin
+models/round6_retrained
+models/round6_v2_retrained/phobert_*/
+models/round6_v2_retrained/visobert_*/
+.playwright-mcp/
+
+# Domain adaptation evaluation results (reproduce via scripts/evaluate_domain_adapted_phobert.py)
+results/domain_adapted_eval_*/
+results/original_eval_*/
+
+# Round predictions (reproduce via scripts/retrain_phobert_for_round5.py)
+models/round*_predictions/
+
+# Thesis report PDFs
+report_pdf/*.pdf
+
+# ============================================================
+# Local-only files
+# ============================================================
+
+# Deployment guide (local only)
+DEPLOY_VERCEL_RAILWAY.md
+
+# Thesis documents (local only)
+*.docx
+*.pdf
+!report_pdf/*.pdf  # Keep PDFs in report_pdf folder
+
+# ============================================================
+# Web demo
+# ============================================================
+web_demo/node_modules/
+web_demo/dist/
+web_demo/build/
+web_demo/.env
+web_demo/.vercel/
+
+# ============================================================
+# Two-Tier DUA Data Governance (Zero Raw Comment Text in Git)
+# ============================================================
+data/*.db
+data/raw/*.csv
+data/raw/*.txt
+data/labeled/*.csv
+data/augmented_v1/*.csv
+data/augmented_v2/*.csv
+data/model_predictions/*.csv
+data/round*/*.csv
+data/translated/*.csv
+data/analysis/*.csv
+data/analysis/bertopic_thesis_export.json
+data_unified/*.csv
+external_datasets/*.csv
+docs/active_learning/**/*.csv
+results/**/*.csv
+results/scientific_audit/stage_arrays_cache.npz
+results/scientific_audit/figures/author_*.png
+results/scientific_audit/figures/author_*.jpg
+
+# Keep Tier-1 public de-identified SHA-256 split manifests tracked
+!data/manifests/
+!data/manifests/*.csv
+!data/manifests/*.json
+
+# Additional local checkpoints & manuscript working bundles
+models/round6_v2_retrained/xlmr_*/
+models/round6_v2_retrained/*.done
+VietDepression_*_Overleaf.zip
+VietDepression_Springer_KAIS_Overleaf/
+skills/
+

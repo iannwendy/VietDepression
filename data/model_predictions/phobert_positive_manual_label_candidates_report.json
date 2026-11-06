@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-07-25T03:36:01.453388+00:00",
+  "selection_protocol": "union of rows predicted depression in remaining/confident pools; normalized deduplication; exclusion of all existing human-gold text; deterministic blinded shuffle; no model score in annotation file",
+  "selection_seed": 20260725,
+  "input_rows": {
+    "remaining_all": 123721,
+    "remaining_predicted_depression": 8279,
+    "confident_all": 116340,
+    "confident_predicted_depression": 5538
+  },
+  "positive_union_before_gold_exclusion": 8279,
+  "human_gold_overlap_removed": 1466,
+  "final_candidate_rows": 6813,
+  "source_pool_distribution": {
+    "remaining+confident": 5016,
+    "remaining": 1797
+  },
+  "pii_pattern_flagged_rows": 2,
+  "annotation_file": "data/model_predictions/phobert_positive_manual_label_candidates.csv",
+  "provenance_key_file": "data/model_predictions/phobert_positive_manual_label_candidates_key.csv",
+  "label_instructions": {
+    "0": "normal / insufficient depression-related personal signal",
+    "1": "depression-related personal textual signal under the project guideline",
+    "skip": "privacy concern, unreadable, or requires adjudication"
+  }
+}

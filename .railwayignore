@@ -1,0 +1,52 @@
+# Exclude large model files - model loaded from HuggingFace Hub
+models/
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Data files
+data/*.csv
+data/*.txt
+data/*.json
+!data/final_dataset.csv
+
+# External datasets
+external_datasets/*.csv
+data_unified/*.csv
+
+# Results
+results/
+results_*/
+
+# Venv
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files
+*.pdf
+*.docx
+*.mp4
+*.zip
+*.tar
+*.tar.gz

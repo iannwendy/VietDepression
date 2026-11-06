@@ -1,0 +1,105 @@
+{
+  "test_set": {
+    "file": "/Users/iannwendy/Documents/crawl_yt/youtube_depression_crawler/external_datasets/external_human_eval.csv",
+    "rows": 3084,
+    "label_counts": {
+      "0": 1542,
+      "1": 1542
+    },
+    "domain": "VSMEC (cross-domain vs YouTube train)",
+    "label_provenance": "human emotion annotation (Sadness/Fear=1, Enjoyment=0)"
+  },
+  "baseline_tfidf_logreg": {
+    "accuracy": 0.6304,
+    "precision_macro": 0.667,
+    "recall_macro": 0.6304,
+    "f1_macro": 0.6089,
+    "f1_depression": 0.5174,
+    "confusion_matrix": [
+      [
+        1333,
+        209
+      ],
+      [
+        931,
+        611
+      ]
+    ],
+    "classification_report": {
+      "normal": {
+        "precision": 0.5887809187279152,
+        "recall": 0.8644617380025941,
+        "f1-score": 0.7004729374671571,
+        "support": 1542.0
+      },
+      "depression": {
+        "precision": 0.7451219512195122,
+        "recall": 0.3962386511024643,
+        "f1-score": 0.5173581710414903,
+        "support": 1542.0
+      },
+      "accuracy": 0.6303501945525292,
+      "macro avg": {
+        "precision": 0.6669514349737137,
+        "recall": 0.6303501945525292,
+        "f1-score": 0.6089155542543236,
+        "support": 3084.0
+      },
+      "weighted avg": {
+        "precision": 0.6669514349737138,
+        "recall": 0.6303501945525292,
+        "f1-score": 0.6089155542543238,
+        "support": 3084.0
+      }
+    }
+  },
+  "phobert_first": {
+    "accuracy": 0.763,
+    "precision_macro": 0.7635,
+    "recall_macro": 0.763,
+    "f1_macro": 0.7628,
+    "f1_depression": 0.7574,
+    "confusion_matrix": [
+      [
+        1212,
+        330
+      ],
+      [
+        401,
+        1141
+      ]
+    ],
+    "classification_report": {
+      "normal": {
+        "precision": 0.7513949163050218,
+        "recall": 0.7859922178988327,
+        "f1-score": 0.7683042789223454,
+        "support": 1542.0
+      },
+      "depression": {
+        "precision": 0.7756628144119646,
+        "recall": 0.7399481193255513,
+        "f1-score": 0.7573846664454033,
+        "support": 1542.0
+      },
+      "accuracy": 0.7629701686121919,
+      "macro avg": {
+        "precision": 0.7635288653584932,
+        "recall": 0.7629701686121919,
+        "f1-score": 0.7628444726838743,
+        "support": 3084.0
+      },
+      "weighted avg": {
+        "precision": 0.7635288653584932,
+        "recall": 0.7629701686121919,
+        "f1-score": 0.7628444726838743,
+        "support": 3084.0
+      }
+    }
+  },
+  "internal_gold_for_reference": {
+    "note": "Diem gold noi bo gan nhu 1.0 do gold set chap nhan lai goi y he thong.",
+    "baseline_gold_accuracy": 1.0,
+    "phobert_gold_f1_macro": 0.954
+  }
+}
