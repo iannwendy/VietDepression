@@ -4,19 +4,35 @@ To protect social-media user privacy against reverse-search re-identification un
 
 ---
 
-## C.1 Reconciled Error Counts Across Model Families ($n = 1{,}371$)
+## C.1 Reconciled Error Counts & Quantitative Error Taxonomy ($n = 1{,}371$)
 
 | Model Configuration | True Neg (TN) | False Pos (FP) | False Neg (FN) | True Pos (TP) | Macro F1 | Accuracy |
 |---------------------|---------------|----------------|----------------|---------------|----------|----------|
 | **ViSoBERT + LA-Focal (Majority Vote)** | **994** | **106** | 109 | 162 | **0.7518** | **84.32%** |
 | **ViSoBERT (Majority Vote)** | 974 | 126 | 101 | 170 | 0.7476 | 83.44% |
 | **ViSoBERT + SupCon (Majority Vote)** | 977 | 123 | 103 | 168 | 0.7471 | 83.52% |
+| **ViSoBERT + NCNL (Majority Vote)** | 980 | 120 | 105 | 166 | 0.7465 | 83.59% |
 | **PhoBERT-base (Majority Vote)** | 933 | 167 | 94 | 177 | 0.7265 | 80.96% |
-| **TF-IDF + Logistic Regression** | 906 | 194 | **89** | **182** | 0.7138 | 79.36% |
+| **TF-IDF + Logistic Regression** | 906 | 194 | 89 | 182 | 0.7138 | 79.36% |
+| **XLM-RoBERTa-base (Majority Vote)** | 820 | 280 | **68** | **203** | 0.6817 | 74.62% |
 | **Lexical Weak Labeler (Abst. $\to$ Neg.)** | 932 | 168 | 149 | 122 | 0.6448 | 76.88% |
 | **Qwen2.5-1.5B (4-Rule + 4-Shot)** | 703 | 397 | 112 | 159 | 0.5594 | 62.87% |
 
-Key empirical shift: Social-media subword pretraining with logit-adjusted focal modulation (**ViSoBERT + LA-Focal**) eliminates **61 false positives** relative to formal-register **PhoBERT-base** (`106` vs. `167`) and **88 false positives** relative to **TF-IDF + Logistic Regression** (`106` vs. `194`), aligning the predicted positive rate (`19.55%`) closely with the true test base rate (`19.77%`).
+### Mutually Exclusive Error-Category Breakdown (Section 4.7, Table 16)
+
+| Error Category (Count, `%` of FP/FN) | ViSoBERT + LA-Focal | PhoBERT-base | TF-IDF + LogReg | XLM-RoBERTa-base |
+|--------------------------------------|--------------------:|-------------:|----------------:|-----------------:|
+| **Total Errors (`%` of $n = 1{,}371$)** | **215 (15.68%)** | 261 (19.04%) | 283 (20.64%) | 348 (25.38%) |
+| **False Positives (FP Total)** | **106 (100%)** | 167 (100%) | 194 (100%) | 280 (100%) |
+| ↳ Rule 1: Supportive / Non-1st-person | 26 (24.5%) | 49 (29.3%) | 66 (34.0%) | 84 (30.0%) |
+| ↳ Rule 2: Polysemy / Idiom / Mixed cue | 15 (14.2%) | 16 (9.6%) | 26 (13.4%) | 24 (8.6%) |
+| ↳ Rule 3: Transient / Routine affect | 65 (61.3%) | 102 (61.1%) | 102 (52.6%) | 172 (61.4%) |
+| **False Negatives (FN Total)** | 109 (100%) | 94 (100%) | 89 (100%) | **68 (100%)** |
+| ↳ Implicit / Figurative ($s(x) \le 0$) | 43 (39.4%) | 41 (43.6%) | 46 (51.7%) | 34 (50.0%) |
+| ↳ Brief ($\le 25$w) / Pronoun-dropped | 20 (18.3%) | 17 (18.1%) | 15 (16.9%) | 11 (16.2%) |
+| ↳ Extended narrative dilution ($> 25$w) | 46 (42.2%) | 36 (38.3%) | 28 (31.5%) | 23 (33.8%) |
+
+Key empirical shift: Social-media subword pretraining with logit-adjusted focal modulation (**ViSoBERT + LA-Focal**) cuts overall test misclassifications to **15.68%** (`215` errors), eliminating **61 false positives** relative to formal-register **PhoBERT-base** (`106` vs. `167`), **88** relative to **TF-IDF + Logistic Regression** (`106` vs. `194`), and **174** relative to multilingual **XLM-RoBERTa-base** (`106` vs. `280`), while cutting Rule 1 supportive/non-first-person false alarms by **69.0%** (`84 -> 26` vs. `XLM-R-base`) and **60.6%** (`66 -> 26` vs. `LogReg`).
 
 ---
 

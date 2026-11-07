@@ -285,20 +285,20 @@ def build_fig1() -> None:
       <div style="border: 1.5px solid #991b1b; border-radius: 6px; background: #fff1f2; overflow: hidden;">
         <div class="sans" style="background: #991b1b; color: #ffffff; padding: 6px 14px; font-size: 12px; font-weight: 700; display:flex; justify-content:space-between; align-items:center;">
           <span>PHASE IV: Strictly Inductive Multi-Family Benchmark, Active-Learning Control &amp; Cross-Corpus Calibration</span>
-          <span style="background: rgba(255,255,255,0.2); padding: 1px 8px; border-radius: 3px; font-size: 10px;">12 Benchmark Configs (3 Seeds + 2,000-Bootstrap CIs)</span>
+          <span style="background: rgba(255,255,255,0.2); padding: 1px 8px; border-radius: 3px; font-size: 10px;">14 Benchmark Configs (3 Seeds + 2,000-Bootstrap CIs)</span>
         </div>
         <div style="display: flex; gap: 14px; padding: 10px 14px; background: #fffafa; font-size: 11.8px; line-height: 1.45; color: #1e293b;">
-          <div style="flex: 1.15; border-right: 1px dashed #fca5a5; padding-right: 12px;">
+          <div style="flex: 1.18; border-right: 1px dashed #fca5a5; padding-right: 12px;">
             <div class="sans" style="font-weight: 700; color: #991b1b; font-size: 11.3px; margin-bottom: 3px;">1. Evaluated Models (Fitted Strictly on Train <i>n</i> = 6,392)</div>
             <div>&bull; <b>Lexical &amp; Recurrent:</b> All-Neg, 335-entry Lexicon, TF-IDF + <b>LinearSVC</b> / <b>LogReg</b>, Class-Weighted <b>BiLSTM</b></div>
-            <div>&bull; <b>Vietnamese Pretrained &amp; Topic:</b> <b>PhoBERT-base</b>, 74-d <b>BERTopic-Only</b>, 806-d <b>PhoBERT+BERTopic</b>, Social-Media <b>ViSoBERT</b></div>
-            <div>&bull; <b>Top-Venue Objectives &amp; LLM:</b> <b>ViSoBERT+LA-Focal</b> (TKDE '24), <b>ViSoBERT+SupCon</b> (KDD '26), 4-Rule 4-Shot <b>Qwen2.5-1.5B</b></div>
+            <div>&bull; <b>Multilingual, Formal &amp; Social Encoders:</b> <b>XLM-R-base</b>, <b>PhoBERT-base</b>, 74-d <b>BERTopic</b>, 806-d <b>Hybrid</b>, <b>ViSoBERT</b></div>
+            <div>&bull; <b>Top-Venue Objectives &amp; LLM:</b> <b>LA-Focal</b> (TKDE '24), <b>SupCon</b> (KDD '26), <b>NCNL</b> (TKDE '23), 4-Shot <b>Qwen2.5-1.5B</b></div>
           </div>
-          <div style="flex: 0.85;">
+          <div style="flex: 0.82;">
             <div class="sans" style="font-weight: 700; color: #991b1b; font-size: 11.3px; margin-bottom: 3px;">2. Statistical Rigor &amp; Transfer Calibration</div>
             <div>&bull; <b>In-Domain (<i>n</i> = 1,371):</b> 2,000-Bootstrap 95% CIs, Paired Bootstrap &Delta;F1 &amp; Exact McNemar tests; ROC-AUC &amp; PR-AUC</div>
             <div>&bull; <b>Active Learning:</b> Equal-budget Random vs. CoMAL, BADGE &amp; Least-Confidence (400 &rarr; 6,392)</div>
-            <div>&bull; <b>UIT-VSMEC (<i>n</i> = 3,084 / 2,691):</b> Static Bayes (&tau; = 0.1974) &amp; Unsupervised Source-Rank Quantile (<i>Q</i><sub>80.3%</sub>)</div>
+            <div>&bull; <b>UIT-VSMEC (<i>n</i> = 3,084 / 2,691):</b> Static Bayes (&tau; = 0.1974) &amp; Source-Rank Quantile (<i>Q</i><sub>80.3%</sub>) across 5 encoders</div>
           </div>
         </div>
       </div>
@@ -751,10 +751,11 @@ def build_fig4() -> None:
     lafocal_prob = np.array(tp["visobert_lafocal_soft_prob"], dtype=float)
     viso_prob = np.array(tp["visobert_soft_prob"], dtype=float)
     pho_prob = np.array(tp["phobert_soft_prob"], dtype=float)
+    xlmr_prob = np.array(tp["xlmr_soft_prob"], dtype=float)
     llm_fs_prob = np.array(tp["qwen25_rubric_prob"], dtype=float)
     lr_prob = np.array(vis_data["curves_in_domain"]["tfidf_logreg_prob"], dtype=float)
 
-    W_a, H_a = 505, 430
+    W_a, H_a = 505, 470
     pad_l, pad_r, pad_t, pad_b = 52, 16, 20, 46
     pw_a = W_a - pad_l - pad_r
     ph_a = H_a - pad_t - pad_b
@@ -803,6 +804,7 @@ def build_fig4() -> None:
 
     svg_a.append(pr_polyline(y_true, llm_fs_prob, "#64748b", "3,3", 1.9))
     svg_a.append(pr_polyline(y_true, lr_prob, "#d97706", "5,2,1.5,2", 2.0))
+    svg_a.append(pr_polyline(y_true, xlmr_prob, "#9333ea", "2,2", 2.0))
     svg_a.append(pr_polyline(y_true, pho_prob, "#dc2626", "6,2", 2.1))
     svg_a.append(pr_polyline(y_true, lafocal_prob, "#0f766e", "4,1.5", 2.2))
     svg_a.append(pr_polyline(y_true, viso_prob, "#2563eb", "", 2.3))
@@ -814,6 +816,7 @@ def build_fig4() -> None:
         (0.6273, 0.5743, "#2563eb"),  # ViSoBERT Maj
         (0.6531, 0.5145, "#dc2626"),  # PhoBERT-base Maj
         (0.6716, 0.4840, "#d97706"),  # TF-IDF + LogReg
+        (0.7491, 0.4203, "#9333ea"),  # XLM-R-base Maj
         (0.5867, 0.2860, "#64748b"),  # Qwen2.5 Rubric 4-Shot
     ]
     for r_op, p_op, col in op_points:
@@ -827,21 +830,22 @@ def build_fig4() -> None:
         ("#2563eb", "", "ViSoBERT (.658)", True),
         ("#0f766e", "4,1.5", "ViSoBERT+LA-Focal (.655)", True),
         ("#dc2626", "6,2", "PhoBERT-base (.621)", False),
+        ("#9333ea", "2,2", "XLM-R-base (.616)", False),
         ("#d97706", "5,2,1.5,2", "TF-IDF+LogReg (.595)", False),
         ("#64748b", "3,3", "Qwen2.5 4-Shot (.343)", False),
     ]
     svg_a.append(
-        f'<rect x="{lx:.1f}" y="{ly:.1f}" width="196" height="98" rx="4" fill="#ffffff" fill-opacity="0.96" stroke="#94a3b8" stroke-width="1"/>'
+        f'<rect x="{lx:.1f}" y="{ly:.1f}" width="196" height="111" rx="4" fill="#ffffff" fill-opacity="0.96" stroke="#94a3b8" stroke-width="1"/>'
         f'<text x="{lx+6:.1f}" y="{ly+11:.1f}" font-family="Helvetica Neue, sans-serif" font-size="8.0" font-weight="700" fill="#475569">Soft Curve (PR-AUC) | &bull; Maj. Op. Pt.</text>'
     )
     for idx_l, (col, dsh, lbl, bold) in enumerate(legend_rows):
-        ry = ly + 23.0 + idx_l * 13.6
+        ry = ly + 23.0 + idx_l * 13.4
         da = f'stroke-dasharray="{dsh}"' if dsh else ""
         fw = "700" if bold else "400"
         svg_a.append(
             f'<line x1="{lx+6:.1f}" y1="{ry:.1f}" x2="{lx+22:.1f}" y2="{ry:.1f}" stroke="{col}" stroke-width="2.2" {da}/>'
             f'<circle cx="{lx+14:.1f}" cy="{ry:.1f}" r="2.8" fill="{col}"/>'
-            f'<text x="{lx+26:.1f}" y="{ry+3.0:.1f}" font-size="8.6" font-weight="{fw}" fill="#0f172a">{lbl}</text>'
+            f'<text x="{lx+26:.1f}" y="{ry+3.0:.1f}" font-size="8.5" font-weight="{fw}" fill="#0f172a">{lbl}</text>'
         )
 
     svg_a.append(
@@ -856,17 +860,19 @@ def build_fig4() -> None:
         ("ViSoBERT + LA-Focal (TKDE '24)", 0.7518, 0.7220, 0.7809, "0.8462", "p = 0.0045*", "#0f766e"),
         ("ViSoBERT (Social-Media Subword)", 0.7476, 0.7176, 0.7748, "0.8474", "p = 0.0090*", "#2563eb"),
         ("ViSoBERT + SupCon (KDD '26)", 0.7471, 0.7172, 0.7751, "0.8459", "p = 0.0080*", "#1e3a8a"),
+        ("ViSoBERT + NCNL (TKDE '23)", 0.7465, 0.7150, 0.7749, "0.8411", "p = 0.0145*", "#0369a1"),
         ("PhoBERT + BERTopic (806-d)", 0.7302, 0.6974, 0.7606, "0.8184", "p = 0.2670", "#0d9488"),
         ("PhoBERT-base (Formal VN)", 0.7265, 0.6977, 0.7550, "0.8356", "p = 0.3440", "#dc2626"),
         ("TF-IDF + LogReg (L2, C = 1.0)", 0.7138, 0.6840, 0.7412, "0.8297", "Lexical Ref.", "#d97706"),
         ("TF-IDF + LinearSVC (C = 1.0)", 0.7025, 0.6721, 0.7327, "0.7927", "p = 0.3265", "#ea580c"),
+        ("XLM-RoBERTa-base (Multilingual)", 0.6817, 0.6539, 0.7086, "0.8351", "p = 0.0130*", "#9333ea"),
         ("BiLSTM Class-Weighted", 0.6507, 0.6219, 0.6794, "0.7671", "p < 0.0001*", "#7c3aed"),
         ("Lexical Weak Labeler (All 1,371)", 0.6448, 0.6153, 0.6753, "0.6546", "p < 0.0001*", "#475569"),
         ("Qwen2.5-1.5B (4-Rule + 4-Shot)", 0.5594, 0.5310, 0.5859, "0.6739", "p < 0.0001*", "#64748b"),
         ("Inductive BERTopic-Only (74-d)", 0.5539, 0.5210, 0.5865, "0.6475", "p < 0.0001*", "#334155"),
     ]
 
-    W_b, H_b = 715, 430
+    W_b, H_b = 715, 470
     fl_pad = 204
     fr_table = 266
     fp_t, fp_b = 32, 46
@@ -911,19 +917,19 @@ def build_fig4() -> None:
             svg_b.append(
                 f'<rect x="6" y="{cy - row_hb/2:.1f}" width="{W_b-12}" height="{row_hb:.1f}" fill="#f8fafc" opacity="0.75"/>'
             )
-        fw = "700" if i < 3 or mname.startswith("TF-IDF + LogReg") else "400"
+        fw = "700" if i < 4 or mname.startswith("TF-IDF + LogReg") or mname.startswith("XLM-RoBERTa") else "400"
         svg_b.append(
-            f'<text x="{fl_pad-7}" y="{cy+3.6:.1f}" text-anchor="end" font-size="10.3" font-weight="{fw}" fill="#0f172a">{mname}</text>'
-            f'<line x1="{sx_b(lo_v):.1f}" y1="{cy:.1f}" x2="{sx_b(hi_v):.1f}" y2="{cy:.1f}" stroke="{col}" stroke-width="2.3"/>'
-            f'<line x1="{sx_b(lo_v):.1f}" y1="{cy-4.0:.1f}" x2="{sx_b(lo_v):.1f}" y2="{cy+4.0:.1f}" stroke="{col}" stroke-width="1.6"/>'
-            f'<line x1="{sx_b(hi_v):.1f}" y1="{cy-4.0:.1f}" x2="{sx_b(hi_v):.1f}" y2="{cy+4.0:.1f}" stroke="{col}" stroke-width="1.6"/>'
-            f'<circle cx="{sx_b(mean_v):.1f}" cy="{cy:.1f}" r="4.2" fill="{col}" stroke="#ffffff" stroke-width="1.1"/>'
+            f'<text x="{fl_pad-7}" y="{cy+3.5:.1f}" text-anchor="end" font-size="10.0" font-weight="{fw}" fill="#0f172a">{mname}</text>'
+            f'<line x1="{sx_b(lo_v):.1f}" y1="{cy:.1f}" x2="{sx_b(hi_v):.1f}" y2="{cy:.1f}" stroke="{col}" stroke-width="2.2"/>'
+            f'<line x1="{sx_b(lo_v):.1f}" y1="{cy-3.8:.1f}" x2="{sx_b(lo_v):.1f}" y2="{cy+3.8:.1f}" stroke="{col}" stroke-width="1.5"/>'
+            f'<line x1="{sx_b(hi_v):.1f}" y1="{cy-3.8:.1f}" x2="{sx_b(hi_v):.1f}" y2="{cy+3.8:.1f}" stroke="{col}" stroke-width="1.5"/>'
+            f'<circle cx="{sx_b(mean_v):.1f}" cy="{cy:.1f}" r="4.0" fill="{col}" stroke="#ffffff" stroke-width="1.1"/>'
         )
-        p_col = "#0f766e" if (i < 3 and "*" in p_str) else ("#b45309" if p_str == "Lexical Ref." else ("#991b1b" if "*" in p_str else "#334155"))
+        p_col = "#0f766e" if (i < 4 and "*" in p_str) else ("#b45309" if p_str == "Lexical Ref." else ("#991b1b" if "*" in p_str else "#334155"))
         svg_b.append(
-            f'<text x="{W_b-fr_table+6}" y="{cy+3.6:.1f}" font-family="SFMono-Regular, Menlo, monospace" font-size="9.4" font-weight="{fw}" fill="#0f172a">{mean_v:.4f} [{lo_v:.3f},{hi_v:.3f}]</text>'
-            f'<text x="{W_b-118}" y="{cy+3.6:.1f}" font-family="SFMono-Regular, Menlo, monospace" font-size="9.4" fill="#334155">{roc_v}</text>'
-            f'<text x="{W_b-74}" y="{cy+3.6:.1f}" font-family="Helvetica Neue, sans-serif" font-size="9.1" font-weight="600" fill="{p_col}">{p_str}</text>'
+            f'<text x="{W_b-fr_table+6}" y="{cy+3.5:.1f}" font-family="SFMono-Regular, Menlo, monospace" font-size="9.2" font-weight="{fw}" fill="#0f172a">{mean_v:.4f} [{lo_v:.3f},{hi_v:.3f}]</text>'
+            f'<text x="{W_b-118}" y="{cy+3.5:.1f}" font-family="SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#334155">{roc_v}</text>'
+            f'<text x="{W_b-74}" y="{cy+3.5:.1f}" font-family="Helvetica Neue, sans-serif" font-size="9.0" font-weight="600" fill="{p_col}">{p_str}</text>'
         )
 
     svg_b.append(
@@ -1191,14 +1197,18 @@ def build_fig6() -> None:
         )
 
     svg_a.append(
+        f'<rect x="{pad_l+7}" y="{pad_t+4}" width="222" height="19" rx="3" fill="#fffbeb" stroke="#d97706" stroke-width="0.9"/>'
+        f'<text x="{pad_l+13}" y="{pad_t+16.5}" font-family="Helvetica Neue, sans-serif" font-size="8.8" font-weight="700" fill="#92400e">Note: Zoomed y-axis [0.60, 0.70] to resolve &plusmn;1 SD</text>'
         f'<line x1="{pad_l}" y1="{pad_t}" x2="{pad_l}" y2="{pad_t+ph_a}" stroke="#0f172a" stroke-width="1.4"/>'
+        f'<line x1="{pad_l-4}" y1="{pad_t+ph_a-5}" x2="{pad_l+4}" y2="{pad_t+ph_a-9}" stroke="#0f172a" stroke-width="1.3"/>'
+        f'<line x1="{pad_l-4}" y1="{pad_t+ph_a-1}" x2="{pad_l+4}" y2="{pad_t+ph_a-5}" stroke="#0f172a" stroke-width="1.3"/>'
         f'<line x1="{pad_l}" y1="{pad_t+ph_a}" x2="{W_a-pad_r}" y2="{pad_t+ph_a}" stroke="#0f172a" stroke-width="1.4"/>'
-        f'<text x="{pad_l + pw_a/2:.1f}" y="{H_a-6}" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">Ordinal Labeled Pool Budget on final_train.csv (% of N = 6,392; 3 Seeds Mean &plusmn; SD)</text>'
-        f'<text x="15" y="{pad_t + ph_a/2:.1f}" text-anchor="middle" font-size="11.8" font-weight="700" fill="#0f172a" transform="rotate(-90 15 {pad_t + ph_a/2:.1f})">In-Domain Test Macro-F1 (Linear Probe)</text>'
+        f'<text x="{pad_l + pw_a/2:.1f}" y="{H_a-6}" text-anchor="middle" font-size="11.4" font-weight="700" fill="#0f172a">Ordinal Labeled Pool Budget on final_train.csv (% of N = 6,392; 3 Seeds Mean &plusmn; SD)</text>'
+        f'<text x="15" y="{pad_t + ph_a/2:.1f}" text-anchor="middle" font-size="11.3" font-weight="700" fill="#0f172a" transform="rotate(-90 15 {pad_t + ph_a/2:.1f})">In-Domain Test Macro-F1 (Zoomed y-axis [0.60, 0.70])</text>'
     )
 
-    # Panel (b): Complete 4 Pretrained Encoders x 3 Label-Free Calibration Regimes (Table 15 exact match)
-    W_b, H_b = 640, 405
+    # Panel (b): Complete 5 Pretrained Encoders x 3 Label-Free Calibration Regimes (Table 15 exact match)
+    W_b, H_b = 675, 405
     pb_l, pb_r, pb_t, pb_b = 48, 14, 42, 52
     pw_b = W_b - pb_l - pb_r
     ph_b = H_b - pb_t - pb_b
@@ -1217,22 +1227,23 @@ def build_fig6() -> None:
 
     svg_b.append(
         f'<rect x="{pb_l+2}" y="4" width="{pw_b-4}" height="28" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>'
-        f'<rect x="{pb_l+14}" y="12" width="12" height="12" fill="#94a3b8" stroke="#334155" stroke-width="0.8"/>'
-        f'<text x="{pb_l+31}" y="21.5" font-size="10.1" fill="#0f172a">Uncalibrated (&tau; = 0.50)</text>'
-        f'<rect x="{pb_l+176}" y="12" width="12" height="12" fill="#f59e0b" stroke="#92400e" stroke-width="0.8"/>'
-        f'<text x="{pb_l+193}" y="21.5" font-size="10.1" font-weight="700" fill="#92400e">Static Bayes (&tau; = 0.1974)</text>'
-        f'<rect x="{pb_l+358}" y="12" width="12" height="12" fill="#0f766e" stroke="#115e59" stroke-width="0.8"/>'
-        f'<text x="{pb_l+375}" y="21.5" font-size="10.1" font-weight="700" fill="#115e59">Unsup. Source-Rank (Q<tspan dy="2" font-size="7.6">80.3%</tspan><tspan dy="-2">)</tspan></text>'
+        f'<rect x="{pb_l+16}" y="12" width="12" height="12" fill="#94a3b8" stroke="#334155" stroke-width="0.8"/>'
+        f'<text x="{pb_l+33}" y="21.5" font-size="10.2" fill="#0f172a">Uncalibrated (&tau; = 0.50)</text>'
+        f'<rect x="{pb_l+188}" y="12" width="12" height="12" fill="#f59e0b" stroke="#92400e" stroke-width="0.8"/>'
+        f'<text x="{pb_l+205}" y="21.5" font-size="10.2" font-weight="700" fill="#92400e">Static Bayes (&tau; = 0.1974)</text>'
+        f'<rect x="{pb_l+378}" y="12" width="12" height="12" fill="#0f766e" stroke="#115e59" stroke-width="0.8"/>'
+        f'<text x="{pb_l+395}" y="21.5" font-size="10.2" font-weight="700" fill="#115e59">Unsup. Source-Rank (Q<tspan dy="2" font-size="7.6">80.3%</tspan><tspan dy="-2">)</tspan></text>'
     )
 
     cal_models = [
+        ("XLM-R-base", "xlmr_base"),
         ("PhoBERT-base", "phobert_base"),
         ("ViSoBERT", "visobert"),
-        ("ViSoBERT + SupCon", "visobert_supcon"),
-        ("ViSoBERT + LA-Focal", "visobert_lafocal"),
+        ("ViSoBERT+SupCon", "visobert_supcon"),
+        ("ViSoBERT+LA-Focal", "visobert_lafocal"),
     ]
     grp_w = pw_b / len(cal_models)
-    bw = 34.0
+    bw = 28.0
     for idx_m, (mlbl, mkey) in enumerate(cal_models):
         cm = cal[mkey]
         vals = [
@@ -1241,7 +1252,7 @@ def build_fig6() -> None:
             (cm["unsupervised_source_rank_quantile"]["vsmec_sad"]["f1_macro"], "#0f766e", "#115e59", True),
         ]
         gcx = pb_l + (idx_m + 0.5) * grp_w
-        offsets = [-1.5 * bw - 3.0, -0.5 * bw, 0.5 * bw + 3.0]
+        offsets = [-1.5 * bw - 2.5, -0.5 * bw, 0.5 * bw + 2.5]
         for off, (v_f1, bfill, bstrk, is_b) in zip(offsets, vals):
             bx = gcx + off
             by = sy_b(v_f1)
@@ -1249,32 +1260,32 @@ def build_fig6() -> None:
             fw = "700" if is_b else "400"
             svg_b.append(
                 f'<rect x="{bx:.1f}" y="{by:.1f}" width="{bw:.1f}" height="{bh:.1f}" fill="{bfill}" stroke="{bstrk}" stroke-width="1.0"/>'
-                f'<text x="{bx + bw/2:.1f}" y="{by - 5.0:.1f}" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="8.8" font-weight="{fw}" fill="#0f172a">{v_f1:.3f}</text>'
+                f'<text x="{bx + bw/2:.1f}" y="{by - 5.0:.1f}" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="8.2" font-weight="{fw}" fill="#0f172a">{v_f1:.3f}</text>'
             )
         svg_b.append(
-            f'<text x="{gcx:.1f}" y="{pb_t+ph_b+19}" text-anchor="middle" font-size="10.6" font-weight="700" fill="#0f172a">{mlbl}</text>'
+            f'<text x="{gcx:.1f}" y="{pb_t+ph_b+19}" text-anchor="middle" font-size="10.0" font-weight="700" fill="#0f172a">{mlbl}</text>'
         )
 
     svg_b.append(
         f'<line x1="{pb_l}" y1="{pb_t}" x2="{pb_l}" y2="{pb_t+ph_b}" stroke="#0f172a" stroke-width="1.4"/>'
         f'<line x1="{pb_l}" y1="{pb_t+ph_b}" x2="{W_b-pb_r}" y2="{pb_t+ph_b}" stroke="#0f172a" stroke-width="1.4"/>'
-        f'<text x="{pb_l + pw_b/2:.1f}" y="{H_b-6}" text-anchor="middle" font-size="11.6" font-weight="700" fill="#0f172a">UIT-VSMEC Sadness-Only Transfer (n = 2,691; All 4 Encoders, Zero Target Labels)</text>'
+        f'<text x="{pb_l + pw_b/2:.1f}" y="{H_b-6}" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">UIT-VSMEC Sadness-Only Transfer (n = 2,691; All 5 Encoders, Zero Target Labels)</text>'
         f'<text x="15" y="{pb_t + ph_b/2:.1f}" text-anchor="middle" font-size="11.8" font-weight="700" fill="#0f172a" transform="rotate(-90 15 {pb_t + ph_b/2:.1f})">External Macro-F1 (y-axis starts at 0.0)</text>'
     )
 
     body = f"""
     <div style="display: flex; gap: 14px; align-items: stretch; background: #ffffff;">
       <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 10px 6px 10px;">
-        <div style="text-align: center; font-size: 13.4px; font-weight: 700; color: #0f172a; margin-bottom: 4px;">
-          (a) Equal-Budget Active Learning Sample Efficiency (<i>n</i> = 400 &rarr; 6,392)
+        <div style="text-align: center; font-size: 13.0px; font-weight: 700; color: #0f172a; margin-bottom: 4px;">
+          (a) Equal-Budget Active Learning [Zoomed y-axis: 0.60&ndash;0.70] (<i>n</i> = 400 &rarr; 6,392)
         </div>
         <svg width="{W_a}" height="{H_a}" viewBox="0 0 {W_a} {H_a}">
           {''.join(svg_a)}
         </svg>
       </div>
       <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 10px 6px 10px;">
-        <div style="text-align: center; font-size: 13.4px; font-weight: 700; color: #0f172a; margin-bottom: 4px;">
-          (b) Label-Free Cross-Corpus Calibration Across All Four Encoders (<i>n</i> = 2,691)
+        <div style="text-align: center; font-size: 13.0px; font-weight: 700; color: #0f172a; margin-bottom: 4px;">
+          (b) Label-Free Cross-Corpus Calibration Across All Five Encoders (<i>n</i> = 2,691)
         </div>
         <svg width="{W_b}" height="{H_b}" viewBox="0 0 {W_b} {H_b}">
           {''.join(svg_b)}
@@ -1282,7 +1293,7 @@ def build_fig6() -> None:
       </div>
     </div>
     """
-    write_and_render("fig6_rev", 1300, 458, body, "fig6_new.png")
+    write_and_render("fig6_rev", 1335, 458, body, "fig6_new.png")
 
 
 if __name__ == "__main__":

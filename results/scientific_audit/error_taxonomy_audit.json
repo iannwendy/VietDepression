@@ -1,0 +1,225 @@
+{
+  "n_test": 1371,
+  "gold_positives": 271,
+  "gold_negatives": 1100,
+  "taxonomy_definitions": {
+    "fp_rule1_supportive_or_non_first_person": "Supportive replies, anti-crisis encouragement, or second/third-person/media commentary (Rule 1 & Rule 4)",
+    "fp_rule2_polysemy_idiom_or_mixed_cue": "Polysemous compounds ('buồn ngủ', 'chết cười'), hyperbolic idioms, or co-occurring appreciative cues (Rule 2)",
+    "fp_rule3_transient_or_routine_affect": "Transient complaints, situational fatigue, or brief negative slang lacking persistent distress (Rule 3)",
+    "fn_implicit_zero_or_negative_lexicon": "Implicit or figurative distress lacking net positive lexicon score (s(x) <= 0)",
+    "fn_brief_or_pronoun_dropped": "Brief (<=25 words) or pronoun-dropped distress disclosures with s(x) > 0",
+    "fn_long_narrative_dilution": "Extended multi-clause personal narratives (>25 words with first-person pronoun and s(x) > 0)"
+  },
+  "models": {
+    "visobert_lafocal": {
+      "display_name": "ViSoBERT + LA-Focal",
+      "total_errors": 215,
+      "error_rate_pct": 15.68,
+      "fp_total": 106,
+      "fp_categories": {
+        "rule1_supportive_or_non_first_person": {
+          "count": 26,
+          "pct": 24.5
+        },
+        "rule2_polysemy_idiom_or_mixed_cue": {
+          "count": 15,
+          "pct": 14.2
+        },
+        "rule3_transient_or_routine_affect": {
+          "count": 65,
+          "pct": 61.3
+        }
+      },
+      "fn_total": 109,
+      "fn_categories": {
+        "implicit_zero_or_negative_lexicon": {
+          "count": 43,
+          "pct": 39.4
+        },
+        "brief_or_pronoun_dropped": {
+          "count": 20,
+          "pct": 18.3
+        },
+        "long_narrative_dilution": {
+          "count": 46,
+          "pct": 42.2
+        }
+      }
+    },
+    "visobert": {
+      "display_name": "ViSoBERT",
+      "total_errors": 227,
+      "error_rate_pct": 16.56,
+      "fp_total": 126,
+      "fp_categories": {
+        "rule1_supportive_or_non_first_person": {
+          "count": 31,
+          "pct": 24.6
+        },
+        "rule2_polysemy_idiom_or_mixed_cue": {
+          "count": 21,
+          "pct": 16.7
+        },
+        "rule3_transient_or_routine_affect": {
+          "count": 74,
+          "pct": 58.7
+        }
+      },
+      "fn_total": 101,
+      "fn_categories": {
+        "implicit_zero_or_negative_lexicon": {
+          "count": 44,
+          "pct": 43.6
+        },
+        "brief_or_pronoun_dropped": {
+          "count": 15,
+          "pct": 14.9
+        },
+        "long_narrative_dilution": {
+          "count": 42,
+          "pct": 41.6
+        }
+      }
+    },
+    "ncnl_tkde23": {
+      "display_name": "ViSoBERT + NCNL",
+      "total_errors": 225,
+      "error_rate_pct": 16.41,
+      "fp_total": 120,
+      "fp_categories": {
+        "rule1_supportive_or_non_first_person": {
+          "count": 26,
+          "pct": 21.7
+        },
+        "rule2_polysemy_idiom_or_mixed_cue": {
+          "count": 25,
+          "pct": 20.8
+        },
+        "rule3_transient_or_routine_affect": {
+          "count": 69,
+          "pct": 57.5
+        }
+      },
+      "fn_total": 105,
+      "fn_categories": {
+        "implicit_zero_or_negative_lexicon": {
+          "count": 45,
+          "pct": 42.9
+        },
+        "brief_or_pronoun_dropped": {
+          "count": 19,
+          "pct": 18.1
+        },
+        "long_narrative_dilution": {
+          "count": 41,
+          "pct": 39.0
+        }
+      }
+    },
+    "phobert_base": {
+      "display_name": "PhoBERT-base",
+      "total_errors": 261,
+      "error_rate_pct": 19.04,
+      "fp_total": 167,
+      "fp_categories": {
+        "rule1_supportive_or_non_first_person": {
+          "count": 49,
+          "pct": 29.3
+        },
+        "rule2_polysemy_idiom_or_mixed_cue": {
+          "count": 16,
+          "pct": 9.6
+        },
+        "rule3_transient_or_routine_affect": {
+          "count": 102,
+          "pct": 61.1
+        }
+      },
+      "fn_total": 94,
+      "fn_categories": {
+        "implicit_zero_or_negative_lexicon": {
+          "count": 41,
+          "pct": 43.6
+        },
+        "brief_or_pronoun_dropped": {
+          "count": 17,
+          "pct": 18.1
+        },
+        "long_narrative_dilution": {
+          "count": 36,
+          "pct": 38.3
+        }
+      }
+    },
+    "xlmr_base": {
+      "display_name": "XLM-RoBERTa-base",
+      "total_errors": 348,
+      "error_rate_pct": 25.38,
+      "fp_total": 280,
+      "fp_categories": {
+        "rule1_supportive_or_non_first_person": {
+          "count": 84,
+          "pct": 30.0
+        },
+        "rule2_polysemy_idiom_or_mixed_cue": {
+          "count": 24,
+          "pct": 8.6
+        },
+        "rule3_transient_or_routine_affect": {
+          "count": 172,
+          "pct": 61.4
+        }
+      },
+      "fn_total": 68,
+      "fn_categories": {
+        "implicit_zero_or_negative_lexicon": {
+          "count": 34,
+          "pct": 50.0
+        },
+        "brief_or_pronoun_dropped": {
+          "count": 11,
+          "pct": 16.2
+        },
+        "long_narrative_dilution": {
+          "count": 23,
+          "pct": 33.8
+        }
+      }
+    },
+    "tfidf_logreg": {
+      "display_name": "TF-IDF + Logistic Regression",
+      "total_errors": 283,
+      "error_rate_pct": 20.64,
+      "fp_total": 194,
+      "fp_categories": {
+        "rule1_supportive_or_non_first_person": {
+          "count": 66,
+          "pct": 34.0
+        },
+        "rule2_polysemy_idiom_or_mixed_cue": {
+          "count": 26,
+          "pct": 13.4
+        },
+        "rule3_transient_or_routine_affect": {
+          "count": 102,
+          "pct": 52.6
+        }
+      },
+      "fn_total": 89,
+      "fn_categories": {
+        "implicit_zero_or_negative_lexicon": {
+          "count": 46,
+          "pct": 51.7
+        },
+        "brief_or_pronoun_dropped": {
+          "count": 15,
+          "pct": 16.9
+        },
+        "long_narrative_dilution": {
+          "count": 28,
+          "pct": 31.5
+        }
+      }
+    }
+  }
+}
